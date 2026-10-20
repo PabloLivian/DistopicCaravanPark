@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Procedural Caravans</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Diario de producción: columna única, entradas como hojas de breakdown. Hormigón + chapa galvanizada + óxido */
+  :root {
+    --bg: #e8ebea;
+    --surface: #f7f8f8;
+    --surface-2: #dde2e1;
+    --text: #1a1f21;
+    --muted: #59636a;
+    --border: #c8cfd1;
+    --accent: #ad4f1c;
+    --accent-soft: #f0dccf;
+    --done: #2f7347;
+    --doing: #ad4f1c;
+    --todo: #87908f;
+    --code-bg: #e1e6e5;
+    --shadow: 0 1px 2px rgba(20,30,35,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121517;
+      --surface: #1a1f22;
+      --surface-2: #232a2d;
+      --text: #e5eaeb;
+      --muted: #99a4a8;
+      --border: #313a3e;
+      --accent: #e3773b;
+      --accent-soft: #3a2418;
+      --done: #6fbf86;
+      --doing: #e3773b;
+      --todo: #737d80;
+      --code-bg: #232a2d;
+      --shadow: none;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121517;
+    --surface: #1a1f22;
+    --surface-2: #232a2d;
+    --text: #e5eaeb;
+    --muted: #99a4a8;
+    --border: #313a3e;
+    --accent: #e3773b;
+    --accent-soft: #3a2418;
+    --done: #6fbf86;
+    --doing: #e3773b;
+    --todo: #737d80;
+    --code-bg: #232a2d;
+    --shadow: none;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding-block: 40px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .hero h1, .entry h3 { text-wrap: balance; }
+  .facts span, .stat b { font-variant-numeric: tabular-nums; }
+  img:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  header.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: center; margin-bottom: 40px; }
+  .hero h1 { font-size: 40px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .hero .kicker { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; }
+  .hero p { margin: 0 0 12px; color: var(--muted); }
+  .hero img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; cursor: zoom-in; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag { font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow); }
+  .stat b { display: block; font-size: 26px; line-height: 1.2; }
+  .stat span { font-size: 13px; color: var(--muted); }
+  h2.section { font-size: 20px; margin: 0 0 16px; }
+  .roadmap { list-style: none; padding: 0; margin: 0 0 48px; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+  .roadmap li { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; font-size: 14px; box-shadow: var(--shadow); }
+  .roadmap .n { font-weight: 700; margin-right: 6px; }
+  .roadmap .st { display: block; font-size: 12px; margin-top: 2px; }
+  .roadmap .done .st { color: var(--done); }
+  .roadmap .doing { border-color: var(--doing); }
+  .roadmap .doing .st { color: var(--doing); font-weight: 600; }
+  .roadmap .todo { color: var(--muted); }
+  .roadmap .todo .st { color: var(--todo); }
+  .refs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 48px; }
+  .refs figure { margin: 0; }
+  .refs img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); cursor: zoom-in; display: block; }
+  .refs figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .entry { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin-bottom: 22px; box-shadow: var(--shadow); }
+  .entry .meta { font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .entry .phase { background: var(--accent-soft); color: var(--accent); font-weight: 600; padding: 2px 9px; border-radius: 999px; }
+  .entry h3 { font-size: 22px; margin: 6px 0 10px; letter-spacing: -0.01em; }
+  .entry p { margin: 0 0 12px; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin: 14px 0 16px; }
+  .shots figure { margin: 0; }
+  .shots img { width: 100%; border-radius: 8px; border: 1px solid var(--border); display: block; cursor: zoom-in; background: #fff; }
+  .shots figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .note { border-left: 3px solid var(--accent); background: var(--surface-2); padding: 12px 16px; border-radius: 0; margin: 14px 0; font-size: 15px; }
+  .note b:first-child { color: var(--accent); display: block; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .facts span { font-size: 12px; padding: 3px 9px; border-radius: 6px; background: var(--code-bg); color: var(--muted); }
+  code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: .88em; background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+  .theme { position: fixed; top: 14px; right: 14px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+  dialog { border: none; padding: 0; background: transparent; max-width: 96vw; max-height: 92vh; }
+  dialog::backdrop { background: rgba(0,0,0,.82); }
+  dialog img { max-width: 96vw; max-height: 88vh; display: block; border-radius: 8px; }
+  dialog p { color: #ddd; text-align: center; font-size: 13px; margin: 8px 0 0; }
+  footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 40px; }
+  @media (max-width: 760px) {
+    header.hero { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .refs { grid-template-columns: repeat(2, 1fr); }
+    .entry { padding: 18px 16px; }
+  }
+</style>
+</head>
+<body>
+<!-- local-only:start -->
+<button class="theme" id="themeBtn" type="button" aria-label="Cambiar tema">Tema</button>
+<!-- local-only:end -->
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <p class="kicker">Diario de producción · Houdini procedural</p>
+      <h1>Procedural Caravans</h1>
+      <p>Un parque de caravanas apiladas en vertical, inspirado en "The Stacks" de <em>Ready Player One</em>. Pobre pero tecnológico: chapa reciclada, pasarelas de rejilla, paneles solares, aires acondicionados y parabólicas.</p>
+      <p>Todo se genera con un sistema procedural en Houdini, controlado por sliders, desde la forma de cada caravana hasta la distribución de las torres.</p>
+      <div class="tags">
+        <span class="tag">Houdini 22</span>
+        <span class="tag">SOPs procedurales</span>
+        <span class="tag">Instancias packed</span>
+        <span class="tag">Karma</span>
+        <span class="tag">Construido con Claude vía MCP</span>
+      </div>
+    </div>
+    <img src="concept/gemini_generated_image_14s15114s15114s1.jpg" alt="Concept principal: caravanas apiladas sobre plataformas metálicas al atardecer">
+  </header>
+
+  <section class="stats" aria-label="Cifras del proyecto">
+    <div class="stat"><b>1b</b><span>Fase actual</span></div>
+    <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
+    <div class="stat"><b>72</b><span>Sliders creados</span></div>
+    <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
+  </section>
+
+  <h2 class="section">Hoja de ruta</h2>
+  <ol class="roadmap">
+    <li class="done"><span class="n">0</span>Setup<span class="st">Hecha</span></li>
+    <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
+    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">Siguiente</span></li>
+    <li class="todo"><span class="n">2</span>Layout y apilado<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
+    <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
+  </ol>
+
+  <h2 class="section">Referencias</h2>
+  <div class="refs">
+    <figure><img src="concept/gemini_generated_image_14s15114s15114s1.jpg" alt="Referencia a pie de calle"><figcaption>Escala humana, atardecer</figcaption></figure>
+    <figure><img src="concept/img_00313_.png" alt="Referencia densa"><figcaption>Torres densas y plaza</figcaption></figure>
+</div>
+
+  <h2 class="section">Avances</h2>
+
+  <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 9 · cierre</span><span>20 oct 2026</span></div>
+    <h3>El pool: 32 caravanas distintas listas para instanciar</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_pool_hoja.png" alt="Hoja de contactos con 32 subvariantes de caravana"><figcaption>Hoja de contactos: una fila por tipo, cuatro subvariantes por fila</figcaption></figure>
+    </div>
+    <p>El generador se convierte en una biblioteca. Con un botón, recorre los ocho tipos y saca cuatro versiones de cada uno: la original y tres variaciones con más o menos largo, otras ventanas, ruedas o calzos, con o sin toldo o franja, distinto número de bombonas. Las 32 se guardan en disco empaquetadas por nombre, junto con sus puntos de anclaje y un índice con el tamaño real de cada una. Con esto queda cerrada la fase 1a.</p>
+    <div class="note"><b>Nota técnica</b>El pool se hornea a disco en lugar de generarse en vivo dentro del parque. Así el parque nunca recalcula el generador: solo lee 32 piezas empaquetadas y las instancia, y 160 caravanas cuestan en memoria lo que 32. Las variaciones usan una semilla por tipo y subvariante, así que cada horneado da exactamente el mismo resultado.</div>
+    <div class="facts"><span>32 subvariantes</span><span>horneado en 0,8 s</span><span>722 KB en disco</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 8b</span><span>20 oct 2026</span></div>
+    <h3>Accesorios: bombonas, toldo, luces y ribete</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_detalle8b_v0.png" alt="Caravana con bombonas de gas en la lanza y toldo"><figcaption>v0 · bombonas en la lanza, toldo enrollado y ribete</figcaption></figure>
+      <figure><img src="capturas/fase1a_detalle8b_v0_trasera.png" alt="Trasera con pilotos"><figcaption>Trasera con pilotos y ribete de aluminio</figcaption></figure>
+      <figure><img src="capturas/fase1a_detalle8b_v7.png" alt="Furgón con faros y toldo"><figcaption>v7 · faros en la cabina y toldo sobre la ventana de servicio</figcaption></figure>
+      <figure><img src="capturas/fase1a_ribete_sweep_esquina.png" alt="Ribete continuo en la esquina del techo"><figcaption>Ribete continuo (Sweep) en la esquina trasera</figcaption></figure>
+    </div>
+    <p>La segunda mitad del pase de detalle añade lo que hace que una caravana parezca vivida: bombonas de gas sobre la lanza, el toldo recogido encima de la puerta, pilotos traseros, faros en los que tienen motor y un ribete de aluminio que recorre el contorno de cada lateral. Cada tipo activa solo lo que le corresponde: la caseta de obra no tiene toldo ni pilotos, y el autobús no lleva bombonas.</p>
+    <div class="note"><b>Nota técnica</b>El ribete no se dibuja a mano: se toma la cara lateral plana y se barre un tubo fino (Sweep) a lo largo de su borde, así que sigue la forma de cualquier tipo en una sola pieza continua. La primera versión, con PolyWire, se colaba por un detalle traicionero: las tiras del redondeo del techo heredaban el grupo del lateral y el ribete salía en 270 trozos. Seleccionar por la normal de la cara, y no por el grupo, lo resolvió y de paso redujo los polígonos casi a la mitad. El ribete inferior se interrumpe en los pasos de rueda.</div>
+    <div class="facts"><span>+8 sliders</span><span>3 grupos de material nuevos</span><span>8 tipos sin errores</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 8a</span><span>20 oct 2026</span></div>
+    <h3>Detalle medio: marcos, guardabarros y escalón</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_detalle8a_v0.png" alt="Caravana clásica con marcos de ventana y escalón"><figcaption>v0 · marcos que sobresalen y bloque de escalón</figcaption></figure>
+      <figure><img src="capturas/fase1a_detalle8a_v4.png" alt="Autobús con guardabarros en los dos ejes"><figcaption>v4 · guardabarros en los dos ejes</figcaption></figure>
+    </div>
+    <p>Primer pase de detalle que cambia la silueta. Las ventanas y la puerta tienen un marco que sobresale de la pared, los pasos de rueda llevan guardabarros en arco y delante de la puerta hay un bloque de escalón apoyado en el suelo. Todo funciona en los ocho tipos sin tocarlos uno a uno.</p>
+    <div class="note"><b>Nota técnica</b>Los marcos reutilizan los mismos puntos que recortan las ventanas: cada punto lleva una normal hacia fuera y Copy to Points orienta el marco con ella. Basta con poner la normal en un lado, porque el Mirror la invierte al reflejar. Si mañana cambia el número de ventanas, marcos y huecos siguen alineados.</div>
+    <div class="facts"><span>+6 sliders</span><span>0 caras no planas</span><span>v0: 600 polígonos</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · limpieza</span><span>20 oct 2026</span></div>
+    <h3>Superficies que parecían dobladas</h3>
+    <div class="shots">
+      <figure><img src="capturas/diag_ngons_sombreado.png" alt="Lateral de la caravana con sombreado degradado"><figcaption>Antes: el lateral plano se sombrea con degradados</figcaption></figure>
+      <figure><img src="capturas/diag_ngons_arreglado.png" alt="Lateral de la caravana con sombreado uniforme"><figcaption>Después: sombreado plano y uniforme (las líneas son solo aristas)</figcaption></figure>
+    </div>
+    <p>Los recortes con Booleans dejaban los laterales como caras gigantes de hasta 73 vértices, sin normales y con alguna cara que no era plana del todo. El viewport las suavizaba con sus vecinas y parecían dobladas. Ahora, al final del generador, cada cara se divide en polígonos de cuatro lados como máximo y se le calculan normales con un ángulo de corte.</p>
+    <div class="note"><b>Nota técnica</b>Normales por vértice con ángulo de corte de 30°: si dos caras forman más de 30°, la arista se ve viva; si forman menos, se suaviza. Las paredes salen planas y los biseles redondos. Es la configuración estándar en hard-surface, y como va al final de la red, todo lo que se añada después hereda el arreglo sin tocar nada más.</div>
+    <div class="facts"><span>0 caras no planas</span><span>máx. 4 vértices por cara</span><span>+130 polígonos en la v0</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 7</span><span>20 oct 2026</span></div>
+    <h3>Techos redondeados: la Airstream por fin parece una Airstream</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_techo_v1_airstream_b.png" alt="Airstream vista desde atrás y arriba"><figcaption>Vista trasera alta: aristas del techo y trasera redondeadas</figcaption></figure>
+      <figure><img src="capturas/fase1a_techo_v1_airstream.png" alt="Airstream desde el lado de la puerta"><figcaption>Lado de la puerta</figcaption></figure>
+      <figure><img src="capturas/fase1a_techo_v6_cannedham.png" alt="Canned ham con el techo suavizado"><figcaption>Canned ham con un redondeo más sutil</figcaption></figure>
+    </div>
+    <p>Extruir un perfil lateral da cajas con las aristas largas vivas. Ahora el contorno alto de los laterales se redondea con un radio y una altura de inicio propios de cada tipo: casi todo en la Airstream, un toque suave en el autobús o el furgón, y nada en la caseta de obra, que debe verse recta.</p>
+    <div class="note"><b>Nota técnica</b>Lo difícil fue elegir solo esas aristas. La solución: convertir cada lateral (una sola cara) en un grupo de aristas con <em>Group Promote</em> quedándose solo con su borde, y cruzarlo con una caja que empieza a la altura deseada. Dos intentos más simples fallaron (seleccionar por ángulo y promover dos grupos a la vez), y quedan anotados en el diario técnico para no repetirlos.</div>
+    <div class="facts"><span>+3 sliders</span><span>8 tipos sin errores</span><span>Airstream: 673 polígonos</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 6b</span><span>20 oct 2026</span></div>
+    <h3>Una cabina de conductor para el food truck</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_tipo_v7_furgon.png" alt="Furgón con cabina, lado de la puerta"><figcaption>v7 · lado de la puerta, con la ventana de servicio</figcaption></figure>
+      <figure><img src="capturas/fase1a_tipo_v7_furgon_b.png" alt="Furgón con cabina, lado opuesto"><figcaption>Lado opuesto: cabina con parabrisas y ventanilla</figcaption></figure>
+    </div>
+    <p>El octavo tipo completa el catálogo: un furgón de reparto convertido en food truck, con una gran ventana de servicio, una cabina de conductor delante y dos ejes. La cabina es una pieza más del generador, así que cualquier otro tipo puede llevarla con un clic.</p>
+    <div class="note"><b>Nota técnica</b>La cabina tiene su propio perfil lateral (capó y parabrisas inclinado) y se funde con la caja mediante un Boolean de unión. Para que la unión sea limpia, la cabina entra 5 cm en la caja, es 6 cm más estrecha y arranca 3 cm más arriba: así nunca hay dos caras exactamente en el mismo plano, que es el caso que más rompe un Boolean.</div>
+    <div class="facts"><span>+11 sliders</span><span>8 presets</span><span>6,9 m con cabina</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 6a</span><span>20 oct 2026</span></div>
+    <h3>Más tipos: caseta de obra, canned ham y autobús de dos ejes</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_tipo_v5_caseta.png" alt="Caseta de obra sobre calzos"><figcaption>v5 · caseta de obra</figcaption></figure>
+      <figure><img src="capturas/fase1a_tipo_v6_cannedham.png" alt="Caravana canned ham de los años 50"><figcaption>v6 · canned ham, inclinada delante y detrás</figcaption></figure>
+      <figure><img src="capturas/fase1a_tipo_v4_autobus.png" alt="Autobús con dos ejes"><figcaption>v4 · el autobús ya tiene eje delantero</figcaption></figure>
+    </div>
+    <p>El catálogo crece a siete tipos. Dos piezas nuevas en el generador lo hacen posible: una trasera que también puede inclinarse y redondearse (con ella la Airstream pasa a ser simétrica) y un segundo eje opcional con su propio paso de rueda. El octavo tipo, un furgón con cabina de conductor, llega en el próximo bloque.</p>
+    <div class="note"><b>Nota técnica</b>El perfil pasó de 5 a 6 puntos. Cuando la trasera es recta, el punto nuevo queda en línea con sus vecinos y una expresión lo saca del grupo de bisel, así que los tipos que ya existían salen idénticos, comprobado con su bounding box. Añadir capacidad sin cambiar lo que ya funciona es la regla para que el pool no se rompa a mitad de proyecto.</div>
+    <div class="facts"><span>+4 sliders</span><span>7 presets</span><span>de 4,5 a 11 m</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 5</span><span>20 oct 2026</span></div>
+    <h3>Un generador, cinco caravanas</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_tipo_v1_airstream.png" alt="Caravana tipo Airstream"><figcaption>v1 · aluminio redondeada (Airstream)</figcaption></figure>
+      <figure><img src="capturas/fase1a_tipo_v2_mobilehome.png" alt="Mobile home sobre calzos"><figcaption>v2 · mobile home sobre calzos</figcaption></figure>
+      <figure><img src="capturas/fase1a_tipo_v3_capsula.png" alt="Caravana cápsula pequeña"><figcaption>v3 · cápsula pequeña</figcaption></figure>
+      <figure><img src="capturas/fase1a_tipo_v4_autobus.png" alt="Autobús reconvertido"><figcaption>v4 · autobús reconvertido</figcaption></figure>
+    </div>
+    <p>Los cinco tipos de caravana salen del mismo generador. Un menú "Tipo" carga un preset de unos 30 valores (perfil, chasis, ventanas, puerta, franja, techo) y después cada slider se puede seguir retocando a mano. El mobile home pierde la lanza y las ruedas, y el autobús cambia el frontal inclinado por un parabrisas casi vertical.</p>
+    <div class="note"><b>Nota técnica</b>Un solo generador en vez de cinco redes: cualquier mejora (un marco de ventana, un remache) llega a todos los tipos a la vez. Además, los radios de las esquinas se limitan solos con <code>min()</code> según la longitud de cada tramo del perfil, así que ningún valor, ni a mano ni aleatorio, puede cruzar el bisel. Es lo que permitirá aleatorizar el pool sin romper geometría.</div>
+    <div class="facts"><span>+2 sliders</span><span>5 presets</span><span>de 4,5 a 11 m de largo</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 4</span><span>20 oct 2026</span></div>
+    <h3>Franja, ventana frontal, claraboyas y anclajes</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_v0_detalles_frontal.png" alt="Caravana v0 con franja y ventana frontal"><figcaption>Lado de la puerta, con colores de previsualización por grupo</figcaption></figure>
+      <figure><img src="capturas/fase1a_v0_detalles_trasera.png" alt="Caravana v0, lado opuesto"><figcaption>Lado opuesto: tres ventanas y paso de rueda</figcaption></figure>
+    </div>
+    <p>La caravana clásica ya se lee como la del concept: carrocería clara con una franja que la rodea, ventana en el frontal inclinado y claraboyas en el techo. Además publica <strong>puntos de anclaje</strong> (techo, fachada y puerta) con su normal, donde más adelante se montarán paneles solares, aires acondicionados y escaleras.</p>
+    <div class="note"><b>Nota técnica</b>La franja no es una pieza pegada: un Boolean en modo <em>Shatter</em>, con la carrocería tratada como superficie, parte las caras por donde pasa una losa invisible y las mete en un grupo propio. La ventana frontal usa una caja girada con <code>atan(retranqueo / altura)</code>, así que sigue al plano inclinado aunque cambie el perfil.</div>
+    <div class="facts"><span>+9 sliders</span><span>294 puntos · 176 polígonos</span><span>6 anclajes</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 3</span><span>20 oct 2026</span></div>
+    <h3>Ventanas, puerta y paso de rueda</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_v0_aberturas_puerta.png" alt="Ventanas y puerta en el lateral"><figcaption>Las ventanas que chocarían con la puerta desaparecen solas</figcaption></figure>
+      <figure><img src="capturas/fase1a_v0_aberturas_trasera.png" alt="Paso de rueda recortado"><figcaption>Paso de rueda recortado alrededor de la rueda</figcaption></figure>
+    </div>
+    <p>Ventanas, puerta y paso de rueda se recortan con Booleans y salen ya clasificados en grupos de material: <code>glass</code>, <code>frame</code>, <code>door</code>, <code>wheelwell</code>. Las ventanas se distribuyen a lo largo del lateral y se eliminan las que invadirían la puerta.</p>
+    <div class="note"><b>Nota técnica</b>Las aberturas son rebajes de 5 cm, no agujeros: la caja sigue cerrada y no hace falta modelar interiores para 160 caravanas. El fondo del rebaje (normal hacia fuera) se convierte en cristal y sus paredes en marco, simplemente comparando normales.</div>
+    <div class="facts"><span>+11 sliders</span><span>238 puntos · 144 polígonos</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 2</span><span>20 oct 2026</span></div>
+    <h3>Chasis: ruedas o calzos</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_v0_chasis_ruedas.png" alt="Caravana sobre ruedas"><figcaption>Con ruedas, para las caravanas a pie de calle</figcaption></figure>
+      <figure><img src="capturas/fase1a_v0_chasis_calzos.png" alt="Caravana sobre calzos"><figcaption>Sobre calzos, para las que ya no se mueven</figcaption></figure>
+    </div>
+    <p>Largueros, lanza en V con enganche, y un interruptor que cambia las ruedas por cuatro calzos. Es la primera variación procedural real: en el pool, unas caravanas conservarán las ruedas y otras no, sin duplicar redes.</p>
+    <div class="note"><b>Nota técnica</b>Las piezas simétricas se modelan una vez y se reflejan con <code>mirror</code>: un solo slider mueve los dos lados. El cambio ruedas/calzos es un <code>switch</code> cuyo índice lee un parámetro, el patrón base de cualquier variante procedural.</div>
+    <div class="facts"><span>+8 sliders</span><span>168 puntos · 103 polígonos</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1a · bloque 1</span><span>20 oct 2026</span></div>
+    <h3>La silueta: dibujar el perfil y extruirlo</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1a_v0_silueta.png" alt="Silueta de la caravana junto a una figura de 1,8 m"><figcaption>Primera silueta junto a la figura de referencia de 1,8 m</figcaption></figure>
+    </div>
+    <p>La caravana nace como un perfil lateral de cinco puntos cuyas posiciones son expresiones conectadas a los sliders (largo, alto, inclinación y radio del frontal). Se redondean las esquinas y se extruye al ancho.</p>
+    <div class="note"><b>Nota técnica</b>Se modela desde la silueta y no desde una caja, porque la silueta es lo que distingue un tipo de caravana de otro. Con los mismos sliders salen formas de travel trailer, de mobile home o casi de autobús.</div>
+    <div class="facts"><span>8 sliders</span><span>7,0 × 2,7 × 2,4 m</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 0</span><span>20 oct 2026</span></div>
+    <h3>La red del pueblo, antes de que exista el pueblo</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase0_red_etapas.png" alt="Red de Houdini con las etapas del generador"><figcaption>Las 8 etapas del generador, cableadas y vacías</figcaption></figure>
+    </div>
+    <p>Antes de modelar nada, se montó el esqueleto del sistema: una biblioteca de assets y un generador en 8 etapas (layout, apilado, estructura, circulación, unidades, equipamiento, clutter y suelo), cada una con su salida estable.</p>
+    <div class="note"><b>Nota técnica</b>Todo el parque será primero una nube de puntos con atributos (qué es cada cosa, dónde va, cómo está girada). La geometría real solo aparece al final, como instancias. Por eso cada pieza llevará además en qué etapa nace y en qué orden aparece: material para el visualizador final.</div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Planificación</span><span>20 oct 2026</span></div>
+    <h3>Decisiones de diseño</h3>
+    <p>Un cuestionario de 15 preguntas fijó el rumbo: unas 160 unidades en clusters alrededor de una plaza, alturas aleatorias de hasta 8 pisos, mucho caos en el apilado (8/10) y accesos reales a cada caravana, comprobados con un grafo. La estructura mezcla vigas IPE abajo y tubo de andamio arriba. Todo se modela proceduralmente en Houdini, con color y óxido por instancia, y la cinemática final será un vuelo de dron renderizado en Karma.</p>
+  </article>
+
+  <footer>Procedural Caravans · diario de producción · se actualiza al cerrar cada bloque</footer>
+</div>
+
+<dialog id="lightbox"><img alt=""><p></p></dialog>
+
+<script>
+  (function () {
+    var dlg = document.getElementById('lightbox');
+    var big = dlg.querySelector('img');
+    var cap = dlg.querySelector('p');
+    document.querySelectorAll('.hero img, .refs img, .shots img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        big.src = img.src;
+        big.alt = img.alt;
+        var fc = img.closest('figure') && img.closest('figure').querySelector('figcaption');
+        cap.textContent = fc ? fc.textContent : img.alt;
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', function () { dlg.close(); });
+
+    /* local-only:start */
+    var root = document.documentElement;
+    var btn = document.getElementById('themeBtn');
+    try {
+      var saved = localStorage.getItem('pc-theme');
+      if (saved) root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    btn.addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme') === 'dark' ||
+        (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var next = dark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('pc-theme', next); } catch (e) {}
+    });
+    /* local-only:end */
+  })();
+</script>
+</body>
+</html>
