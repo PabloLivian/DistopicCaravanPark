@@ -147,7 +147,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>1b</b><span>Fase actual</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>72</b><span>Sliders creados</span></div>
+    <div class="stat"><b>88</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -155,7 +155,7 @@
   <ol class="roadmap">
     <li class="done"><span class="n">0</span>Setup<span class="st">Hecha</span></li>
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
-    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">Siguiente</span></li>
+    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">En curso · puesto de chapa</span></li>
     <li class="todo"><span class="n">2</span>Layout y apilado<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
@@ -176,6 +176,17 @@
   <h2 class="section">Avances</h2>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1b · bloque 1</span><span>20 oct 2026</span></div>
+    <h3>El puesto de chapa: la carcasa</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1b_puesto_carcasa.png" alt="Puesto de chapa con mostrador de madera, tejadillo ondulado y figura humana de 1,8 m"><figcaption>Carcasa con los valores por defecto, junto a la figura de 1,8 m</figcaption></figure>
+    </div>
+    <p>Empieza el resto del kit con los puestos de trabajo de la plaza. Todos comparten la misma carcasa: dos laterales de chapa, pared trasera, dintel, un mostrador de madera con tablero volado y un tejadillo de chapa ondulada que cae hacia la calle y se apoya en dos postes. Ancho, fondo, alturas, volados y la onda de la chapa son sliders. Los cuatro tipos de puesto (tienda, bar, taller y electrónica) se diferenciarán por lo que lleven dentro.</p>
+    <div class="note"><b>Nota técnica</b>Toda la geometría cuelga de una sola regla: la línea del tejado, que va de la altura trasera a la delantera. Los laterales son un trapecio de cuatro puntos cuyas esquinas son expresiones, la chapa se inclina con el arcotangente de esa pendiente y los postes miden exactamente lo que marca la línea en su posición. Si se cambia cualquier altura o el fondo, todo vuelve a encajar sin huecos. La onda de la chapa es una sinusoide aplicada a una rejilla con ocho columnas por onda, con los valles apoyados en los muros.</div>
+    <div class="facts"><span>+16 sliders</span><span>444 puntos · 237 polígonos</span><span>2,84 × 2,65 × 2,70 m</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 1a · bloque 9 · cierre</span><span>20 oct 2026</span></div>
