@@ -147,7 +147,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>1b</b><span>Fase actual</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>116</b><span>Sliders creados</span></div>
+    <div class="stat"><b>125</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -176,6 +176,18 @@
   <h2 class="section">Avances</h2>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1b · contenedor abierto</span><span>21 oct 2026</span></div>
+    <h3>El contenedor se abre: puertas y kiosco</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1b_contenedor_tienda.png" alt="Contenedor con una ventana recortada en el lateral, portón de chapa levantado y mostrador de madera"><figcaption>Kiosco: hueco recortado, portón de chapa como tejadillo y mostrador</figcaption></figure>
+      <figure><img src="capturas/fase1b_contenedor_abierto.png" alt="Contenedor con las dos puertas abiertas en ángulos distintos y el interior visible"><figcaption>Puertas abiertas, cada una con su ángulo</figcaption></figure>
+    </div>
+    <p>El contenedor deja de ser solo almacén. Cada hoja de puerta gira sobre su bisagra con su propio ángulo, con las barras de cierre incluidas, y deja ver el interior. En el lateral se puede recortar un hueco rectangular de tamaño y posición libres: la chapa que se recorta se convierte en un portón abatible que hace de tejadillo, y debajo aparece un mostrador de madera sobre escuadras. Es el kiosco clásico hecho con un contenedor, perfecto para la plaza.</p>
+    <div class="note"><b>Nota técnica</b>El hueco se abre con un Boolean que trata la chapa como superficie abierta y no como sólido, así que corta limpio sin cerrar nada. El portón no es el trozo cortado sino una rejilla nueva del tamaño del hueco, pero como la greca se calcula con la posición en el contenedor, sale exactamente en fase con el lateral: con el portón cerrado, el hueco desaparece sin dejar costura. Con todas las aperturas a cero, el contenedor es idéntico al de almacén, polígono a polígono.</div>
+    <div class="facts"><span>+9 sliders</span><span>abierto: 975 polígonos</span><span>cerrado: 829, sin cambios</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 1b · contenedor</span><span>21 oct 2026</span></div>
