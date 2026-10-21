@@ -147,7 +147,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>1b</b><span>Fase actual</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>206</b><span>Sliders creados</span></div>
+    <div class="stat"><b>219</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -155,7 +155,7 @@
   <ol class="roadmap">
     <li class="done"><span class="n">0</span>Setup<span class="st">Hecha</span></li>
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
-    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">En curso · falta el poste eléctrico</span></li>
+    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">En curso · falta el pool del poste</span></li>
     <li class="todo"><span class="n">2</span>Layout y apilado<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
@@ -176,6 +176,18 @@
   <h2 class="section">Avances</h2>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1b · poste eléctrico</span><span>21 oct 2026</span></div>
+    <h3>El poste que llevará los cables</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1b_poste.png" alt="Poste eléctrico de madera de 7,5 m con cruceta, aisladores, peldaños y transformador junto a una figura humana"><figcaption>Por defecto: 7,5 m, una cruceta con tres aisladores y transformador</figcaption></figure>
+      <figure><img src="capturas/fase1b_poste_variante.png" alt="Poste inclinado con tres crucetas, doce aisladores y una farola"><figcaption>Variante: tres crucetas, farola y 5° de inclinación</figcaption></figure>
+    </div>
+    <p>La última familia del kit es el poste eléctrico del suelo: de madera o metálico, de 4 a 12 m, con una a tres crucetas, aisladores, peldaños alternos para subir, un transformador colgado detrás y, opcionalmente, una farola. Se puede inclinar unos grados, porque en el parque nada está del todo recto. El poste no es solo decorado: publica puntos de anclaje encima de cada aislador y otro para la acometida a las casas, que es donde se engancharán los cables.</p>
+    <div class="note"><b>Nota técnica</b>Cada cruceta se modela una sola vez con sus jabalcones y sus aisladores, y se copia a una línea de puntos que baja desde la punta del poste. Los anclajes de los cables usan exactamente esos mismos puntos, desplazados a la cabeza del aislador, así que siempre coinciden con la geometría, haya una cruceta o tres. La inclinación se aplica al final a la vez al poste y a los anclajes, con el mismo giro.</div>
+    <div class="facts"><span>+13 sliders</span><span>440 polígonos</span><span>4 anclajes por defecto</span><span>1 grupo nuevo: insulator</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 1b · clutter · caja tech en el pool</span><span>21 oct 2026</span></div>
