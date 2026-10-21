@@ -145,7 +145,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>1b</b><span>Fase actual</span></div>
+    <div class="stat"><b>2</b><span>Fase siguiente</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>221</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -155,8 +155,8 @@
   <ol class="roadmap">
     <li class="done"><span class="n">0</span>Setup<span class="st">Hecha</span></li>
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
-    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">En curso · falta la hoja final a escala</span></li>
-    <li class="todo"><span class="n">2</span>Layout y apilado<span class="st">Pendiente</span></li>
+    <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
+    <li class="todo"><span class="n">2</span>Layout y apilado<span class="st">Siguiente</span></li>
     <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
@@ -176,6 +176,18 @@
   <h2 class="section">Avances</h2>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1b · cierre</span><span>21 oct 2026</span></div>
+    <h3>El kit completo: 121 piezas listas para construir el parque</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1b_kit_hoja_final.png" alt="Vista general de las 121 piezas del kit ordenadas por familias"><figcaption>Las siete familias: de lo pequeño (delante) a las caravanas (al fondo)</figcaption></figure>
+      <figure><img src="capturas/fase1b_kit_hoja_final_cerca.png" alt="Primeras filas del kit con bidones, aires acondicionados, parabólicas, postes y puestos junto a una figura humana"><figcaption>Las primeras filas junto a la figura de 1,8 m</figcaption></figure>
+    </div>
+    <p>Con la hoja final se cierra la fase 1b: todo el kit del parque, a escala y en una sola vista. Son 32 caravanas, 12 puestos, 18 contenedores, 16 piezas de equipamiento, 17 de circulación, 20 props de clutter y 6 postes eléctricos. Cada familia sale de su propio generador procedural y se hornea a disco como un pool de variantes empaquetadas, con su tamaño real y sus puntos de anclaje. La siguiente fase deja de modelar piezas y empieza a construir el parque: plaza, clusters de torres y apilado.</p>
+    <div class="note"><b>Nota técnica</b>La hoja no está colocada a mano. Un único wrangle recorre las 121 piezas, lee el bounding box de cada una, deduce su familia por el nombre y las coloca en filas de 48 m como máximo, con lo pequeño delante y lo grande al fondo. No crea geometría: solo mueve el punto de cada instancia. Es, a escala de catálogo, lo mismo que hará el parque, que trabaja con nubes de puntos e instancias del pool.</div>
+    <div class="facts"><span>121 piezas</span><span>7 familias</span><span>221 sliders</span><span>46,5 × 78 m de hoja</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 1b · poste eléctrico · cierre</span><span>21 oct 2026</span></div>
