@@ -147,7 +147,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>1b</b><span>Fase actual</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>128</b><span>Sliders creados</span></div>
+    <div class="stat"><b>149</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -155,7 +155,7 @@
   <ol class="roadmap">
     <li class="done"><span class="n">0</span>Setup<span class="st">Hecha</span></li>
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
-    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">En curso · puestos y contenedores hechos</span></li>
+    <li class="doing"><span class="n">1b</span>Resto del kit<span class="st">En curso · puestos, contenedores y equipamiento</span></li>
     <li class="todo"><span class="n">2</span>Layout y apilado<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
@@ -176,6 +176,20 @@
   <h2 class="section">Avances</h2>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 1b · equipamiento</span><span>21 oct 2026</span></div>
+    <h3>Lo tecnológico: aire acondicionado, solares, electrónica y parabólicas</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase1b_equip_ac.png" alt="Unidad exterior de aire acondicionado con escuadras junto a una figura humana"><figcaption>Aire acondicionado con escuadras de pared</figcaption></figure>
+      <figure><img src="capturas/fase1b_equip_solar.png" alt="Dos paneles solares inclinados sobre bastidor"><figcaption>Paneles solares sobre bastidor</figcaption></figure>
+      <figure><img src="capturas/fase1b_equip_tech.png" alt="Armario de electrónica con antena y baterías"><figcaption>Caja tech: armario, antena y baterías</figcaption></figure>
+      <figure><img src="capturas/fase1b_equip_parabolica.png" alt="Antena parabólica sobre poste"><figcaption>Parabólica con perfil parabólico real</figcaption></figure>
+    </div>
+    <p>El "pobre pero tecnológico" del parque sale de cuatro piezas, todas en el mismo generador: la unidad exterior de un aire acondicionado, con su ventilador, sus lamas y sus escuadras; paneles solares en fila sobre bastidor o en lo alto de un mástil; un armario de electrónica con antenas de varilla, un LED de estado y baterías en el suelo; y una antena parabólica que se puede orientar. Todas comparten una convención de montaje: las de fachada tienen la pared en un plano fijo y las de techo apoyan en el suelo, así que más adelante bastará con alinearlas con los anclajes de cada caravana.</p>
+    <div class="note"><b>Nota técnica</b>La parabólica es una parábola de verdad: cinco puntos con <code>y = r² / 4f</code>, girados con <code>Revolve</code>, y el cabezal colocado exactamente en el foco. Los paneles solares calculan la altura de cada pata con el seno y el coseno de la inclinación, así que el bastidor siempre toca el panel aunque cambie el ángulo. Al construir el bloque se escaparon dos nodos sin entrada; solo dieron error al mostrar su rama, así que ahora cada generador se prueba rama por rama.</div>
+    <div class="facts"><span>+21 sliders</span><span>4 tipos</span><span>de 80 a 282 polígonos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 1b · contenedor · cierre</span><span>21 oct 2026</span></div>
