@@ -147,7 +147,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>2</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>238</b><span>Sliders creados</span></div>
+    <div class="stat"><b>243</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -156,7 +156,7 @@
     <li class="done"><span class="n">0</span>Setup<span class="st">Hecha</span></li>
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
     <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
-    <li class="doing"><span class="n">2</span>Layout y apilado<span class="st">En curso · bloque 3 de 6</span></li>
+    <li class="doing"><span class="n">2</span>Layout y apilado<span class="st">En curso · bloque 4 de 6</span></li>
     <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
@@ -176,6 +176,19 @@
   <h2 class="section">Avances</h2>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 2 · bloque 4</span><span>22 oct 2026</span></div>
+    <h3>Un dial de caos: de pilas ordenadas a The Stacks</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase2_b4_caos0.png" alt="Torres de cajas de colores bien alineadas, sin voladizos"><figcaption>Caos 0: pilas ordenadas, cada caravana sobre la de abajo</figcaption></figure>
+      <figure><img src="capturas/fase2_b4_caos8.png" alt="Las mismas torres con caravanas que vuelan, se cruzan y dejan huecos"><figcaption>Caos 8 (por defecto): voladizos, cruces a 90° y huecos</figcaption></figure>
+      <figure><img src="capturas/fase2_b4_caos10.png" alt="Torres aún más irregulares, con muchas piezas cruzadas y voladas"><figcaption>Caos 10: un 25 % más de todo</figcaption></figure>
+    </div>
+    <p>Un solo slider, el caos, controla lo desordenado que es el parque. Con 0 las caravanas se apilan como cajas en un almacén. Con 8, el valor elegido para el proyecto, una de cada dos piezas vuela por encima del vacío, muchas se cruzan a 90° con la de abajo y quedan huecos en mitad de las torres. Las reglas siguen mandando: nada se solapa, toda unidad conserva al menos un apoyo, nunca se vuela sobre la plaza ni sobre otra torre, y la puerta sigue teniendo su sitio. Además, las torres dejan de ser pirámides: los pisos altos tienen casi el doble de unidades que antes.</p>
+    <div class="note"><b>Nota técnica</b>El maestro no tiene lógica propia: multiplica las tres probabilidades (cruce, voladizo y hueco) por caos/8, así que 8 deja los sliders tal cual y 0 los anula. Para el cruce, la rejilla guarda en cada celda el eje de la caravana que la ocupa. Cada posición posible se compara con lo que tiene debajo y recibe un peso, y la posición final sale de una ruleta ponderada. Un script de comprobación recorre la rejilla tras cada cambio y cuenta lo que no debería existir: solapes, piezas sin apoyo y voladizos de más. Salió cero en todos los casos.</div>
+    <div class="facts"><span>+5 sliders</span><span>179 unidades</span><span>75 con voladizo</span><span>82 huecos</span><span>86 ms los 8 pisos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 2 · bloque 3</span><span>22 oct 2026</span></div>
