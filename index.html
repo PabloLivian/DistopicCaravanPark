@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>281</b><span>Sliders creados</span></div>
+    <div class="stat"><b>283</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -180,7 +180,7 @@
     <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
-    <li class="doing"><span class="n">4</span>Circulación y accesos<span class="st">En curso · bloque 2 de 5</span></li>
+    <li class="doing"><span class="n">4</span>Circulación y accesos<span class="st">En curso · bloque 3 de 5</span></li>
     <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
@@ -206,14 +206,26 @@
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
 
   <article class="entry">
+    <div class="meta"><span class="phase">Fase 4 · bloque 3</span><span>23 oct 2026</span></div>
+    <h3>Rejillas, escaleras y puentes</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase4_b3_pasarelas_cerca.png" alt="Torres de caravanas de colores con pasarelas de rejilla, escaleras de zanca, escaleras de mano y patas de tubo"><figcaption>Pasarelas de rejilla con sus patas de tubo, escaleras en zigzag y escaleras de mano</figcaption></figure>
+      <figure><img src="capturas/fase4_b3_circulacion_parque.png" alt="Vista general del parque con estructura, caravanas y toda la circulación"><figcaption>El parque con estructura, caravanas y circulación completa</figcaption></figure>
+    </div>
+    <p>La red de pasarelas se convierte en piezas reales del kit: tramos de rejilla, nudos, rellanos ante cada puerta, escaleras de zanca en zigzag en los núcleos y escaleras de mano por encima. Cada nudo baja patas de tubo hasta lo primero que encuentra (el techo de una caravana, otra pasarela o el suelo), y diez puentes cruzan entre torres. Este bloque también corrigió un error del anterior: el grafo tenía conexiones en diagonal que no deberían existir y, al quitarlas, seis puertas se quedaban encerradas. Ahora el grafo admite bajar por escalera de mano, como en las referencias, y todas vuelven a tener salida.</p>
+    <div class="note"><b>Nota técnica</b>Cada torre es un grafo 3D: las celdas de cada piso se unen con sus cuatro vecinas y, con un coste alto controlado por un slider, con la celda de debajo. Find Shortest Path elige así entre caminar hasta la escalera o bajar por una escalera de mano, y solo usa la segunda cuando compensa. Después, una comprobación muestrea cada pieza contra la malla real de las caravanas y contra la estructura de la fase 3, incluido el hueco de paso de dos metros sobre cada pasarela. Fue ella la que obligó a rediseñar la llegada a las escaleras: entrar de lado metía la pasarela entre los pilares de la torre vecina, así que ahora al rellano se entra siempre de frente.</div>
+    <div class="facts"><span>+2 sliders</span><span>122 / 122 puertas con salida</span><span>10 puentes</span><span>36 escaleras de mano</span><span>0 roces</span><span>1.055 piezas packed</span></div>
+  </article>
+
+  <article class="entry">
     <div class="meta"><span class="phase">Fase 4 · bloque 2</span><span>22 oct 2026</span></div>
     <h3>De cada puerta a la escalera</h3>
     <div class="shots">
       <figure><img src="capturas/fase4_b2_pasarelas.png" alt="Torres de cajas grises con núcleos verdes y naranjas y pasarelas azules que unen las puertas con ellos"><figcaption>En azul, la red de pasarelas: cada puerta de los pisos altos tiene un camino hasta el núcleo de su torre</figcaption></figure>
     </div>
-    <p>Con el núcleo de cada torre decidido, toca llegar a él. Cada puerta de los pisos altos tiene delante una celda reservada desde el apilado, y desde ahí se busca el camino más corto hasta la escalera de su torre, piso a piso. La red de pasarelas es la suma de todos esos caminos: donde dos coinciden, comparten tramo. Las 123 puertas de los pisos altos llegan a su escalera.</p>
+    <p>Con el núcleo de cada torre decidido, toca llegar a él. Cada puerta de los pisos altos tiene delante una celda reservada desde el apilado, y desde ahí se busca el camino más corto hasta la escalera de su torre, piso a piso. La red de pasarelas es la suma de todos esos caminos: donde dos coinciden, comparten tramo. (Ojo: el recuento de este bloque, 123 de 123 puertas conectadas, salía de un grafo con conexiones en diagonal que no debían existir; se corrigió en el bloque 3.)</p>
     <div class="note"><b>Nota técnica</b>Cada piso de cada torre es un grafo de celdas unidas con sus cuatro vecinas, y el nodo Find Shortest Path hace el resto. El coste de cada celda decide la forma: pasar por dentro de la torre es barato, volar fuera de ella sale caro y cruzar un callejón más aún, así que las pasarelas se pegan a las caravanas y solo salen al vacío cuando no queda otra. Como una celda puede rodear a dos torres, cada torre tiene su propia copia del grafo, apilada en una altura ficticia para que no se mezclen; la posición real se recupera después.</div>
-    <div class="facts"><span>123 / 123 puertas conectadas</span><span>317 celdas de pasarela</span><span>229 tramos</span></div>
+    <div class="facts"><span>317 celdas de pasarela</span><span>229 tramos</span><span>Corregido en el bloque 3: ver la entrada siguiente</span></div>
   </article>
 
   <article class="entry">
