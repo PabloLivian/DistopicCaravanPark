@@ -167,9 +167,9 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>2</b><span>Fase en curso</span></div>
+    <div class="stat"><b>3</b><span>Fase siguiente</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>263</b><span>Sliders creados</span></div>
+    <div class="stat"><b>272</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -178,8 +178,8 @@
     <li class="done"><span class="n">0</span>Setup<span class="st">Hecha</span></li>
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
     <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
-    <li class="doing"><span class="n">2</span>Layout y apilado<span class="st">Criterio cumplido · falta el bloque 6</span></li>
-    <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Pendiente</span></li>
+    <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
+    <li class="todo"><span class="n">3</span>Estructura metálica<span class="st">Siguiente</span></li>
     <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
@@ -204,6 +204,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 2 · bloque 6 · cierre</span><span>22 oct 2026</span></div>
+    <h3>Dibujar la plaza, trazar calles y pintar dónde crece el parque</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase2_b6_inputs_planta.png" alt="Planta del solar con una plaza elíptica, una avenida diagonal y una zona vacía sin torres"><figcaption>Planta con las entradas: plaza dibujada, avenida diagonal y un vacío pintado (arriba a la derecha)</figcaption></figure>
+      <figure><img src="capturas/fase2_b6_inputs_parque.png" alt="El parque en cajas: torres más bajas en primer plano y un hueco sin torres"><figcaption>La máscara de altura baja las torres del sur y la de densidad abre un hueco</figcaption></figure>
+    </div>
+    <p>El parque ya no depende solo de los sliders: se puede dirigir a mano. Una curva cerrada sustituye a la plaza redonda, unas curvas trazan calles nuevas sobre los callejones, y dos máscaras pintadas sobre el solar deciden dónde suben más las torres y dónde no se construye. Todo es opcional: con las entradas apagadas, el parque es exactamente el procedural de siempre, caravana por caravana. Con esto se cierra la fase 2.</p>
+    <div class="note"><b>Nota técnica</b>Desde el primer bloque, las calles y la plaza eran curvas medidas con <code>xyzdist</code>, no celdas pintadas. Gracias a eso, añadir las entradas no tocó la lógica: un <code>Switch</code> elige entre la curva procedural y la del usuario, y el resto de la red no se entera. Las máscaras viajan como atributos: la de altura multiplica la altura objetivo de cada torre y la de densidad se convierte en el atributo de densidad del <code>Scatter</code> que reparte las torres. Para comprobar que las entradas apagadas no cambian nada, se compararon los dos parques unidad por unidad.</div>
+    <div class="facts"><span>+9 controles</span><span>3 entradas opcionales</span><span>0 cambios con todo apagado</span><span>78 ms el parque</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 2 · bloque 5</span><span>22 oct 2026</span></div>
