@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inspiración: Ready Player One</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Página de inspiración: el parque de caravanas según el libro. Mismos tokens que el diario */
+  :root {
+    --bg: #e8ebea;
+    --surface: #f7f8f8;
+    --surface-2: #dde2e1;
+    --text: #1a1f21;
+    --muted: #59636a;
+    --border: #c8cfd1;
+    --accent: #ad4f1c;
+    --accent-soft: #f0dccf;
+    --code-bg: #e1e6e5;
+    --shadow: 0 1px 2px rgba(20,30,35,.07);
+    --layer-roof: #f3e3c6;
+    --layer-roof-ink: #7a4f10;
+    --layer-tower: #e3d6cc;
+    --layer-tower-ink: #6e3d22;
+    --layer-ground: #d6d9d6;
+    --layer-ground-ink: #3f484c;
+    --layer-edge: #c9cdca;
+    --layer-edge-ink: #384144;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121517;
+      --surface: #1a1f22;
+      --surface-2: #232a2d;
+      --text: #e5eaeb;
+      --muted: #99a4a8;
+      --border: #313a3e;
+      --accent: #e3773b;
+      --accent-soft: #3a2418;
+      --code-bg: #232a2d;
+      --shadow: none;
+      --layer-roof: #3a2f1c;
+      --layer-roof-ink: #f0c779;
+      --layer-tower: #33261f;
+      --layer-tower-ink: #f0a77c;
+      --layer-ground: #252b2d;
+      --layer-ground-ink: #c3cbce;
+      --layer-edge: #1f2426;
+      --layer-edge-ink: #aab4b8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121517;
+    --surface: #1a1f22;
+    --surface-2: #232a2d;
+    --text: #e5eaeb;
+    --muted: #99a4a8;
+    --border: #313a3e;
+    --accent: #e3773b;
+    --accent-soft: #3a2418;
+    --code-bg: #232a2d;
+    --shadow: none;
+    --layer-roof: #3a2f1c;
+    --layer-roof-ink: #f0c779;
+    --layer-tower: #33261f;
+    --layer-tower-ink: #f0a77c;
+    --layer-ground: #252b2d;
+    --layer-ground-ink: #c3cbce;
+    --layer-edge: #1f2426;
+    --layer-edge-ink: #aab4b8;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding-block: 28px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  h1, h2, h3 { text-wrap: balance; }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; text-decoration: none; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; box-shadow: var(--shadow); }
+  .back:hover { border-color: var(--accent); color: var(--accent); }
+  .origin { margin: 22px 0 36px; background: var(--accent-soft); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 16px 20px; }
+  .origin b:first-child { display: block; color: var(--accent); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+  .origin p { margin: 0; }
+  .origin p + p { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; margin-bottom: 36px; }
+  .hero .kicker { color: var(--accent); font-weight: 600; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; }
+  .hero h1 { font-size: 40px; line-height: 1.1; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .hero p { margin: 0 0 12px; color: var(--muted); }
+  .hero img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; }
+  .hero figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .hero figure { margin: 0; }
+  .numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 48px; }
+  .num { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow); }
+  .num b { display: block; font-size: 26px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+  .num span { font-size: 13px; color: var(--muted); }
+  h2 { font-size: 22px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); margin: 0 0 18px; }
+  section { margin-bottom: 52px; }
+
+  /* La torre por capas */
+  .tower { display: grid; gap: 6px; }
+  .layer { display: grid; grid-template-columns: 190px 1fr; gap: 18px; border-radius: 10px; padding: 16px 20px; border: 1px solid var(--border); }
+  .layer h3 { margin: 0; font-size: 17px; }
+  .layer .where { display: block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; opacity: .85; }
+  .layer ul { margin: 0; padding-left: 18px; }
+  .layer li + li { margin-top: 4px; }
+  .roof { background: var(--layer-roof); }
+  .roof h3, .roof .where { color: var(--layer-roof-ink); }
+  .stack { background: var(--layer-tower); padding-block: 28px; }
+  .stack h3, .stack .where { color: var(--layer-tower-ink); }
+  .ground { background: var(--layer-ground); }
+  .ground h3, .ground .where { color: var(--layer-ground-ink); }
+  .edge { background: var(--layer-edge); }
+  .edge h3, .edge .where { color: var(--layer-edge-ink); }
+
+  /* Dónde aparece */
+  .timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); }
+  .timeline li { position: relative; padding: 0 0 18px 22px; }
+  .timeline li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .timeline li.key::before { background: var(--accent); }
+  .chap { display: inline-block; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 12px; background: var(--code-bg); color: var(--muted); padding: 1px 7px; border-radius: 5px; margin-right: 6px; }
+  .timeline b { display: inline; }
+  .timeline p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+
+  /* Glosario */
+  .gloss { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; box-shadow: var(--shadow); }
+  .card h3 { margin: 0 0 10px; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+  .card h3 .letter { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-size: 13px; }
+  .card dl { margin: 0; }
+  .card dt { font-weight: 600; font-size: 15px; }
+  .card dd { margin: 2px 0 10px; color: var(--muted); font-size: 14px; }
+  .card dd:last-child { margin-bottom: 0; }
+
+  /* Del libro al proyecto */
+  .project { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .col { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; box-shadow: var(--shadow); }
+  .col h3 { margin: 0 0 4px; font-size: 16px; }
+  .col .tagline { font-size: 13px; color: var(--muted); margin: 0 0 10px; }
+  .col ul { margin: 0; padding-left: 18px; font-size: 15px; }
+  .col li + li { margin-top: 6px; }
+  .col.yes { border-top: 3px solid var(--accent); }
+
+  .theme { position: fixed; top: 14px; right: 14px; border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 6px 12px; font-size: 13px; cursor: pointer; }
+  footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 40px; }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    .numbers { grid-template-columns: repeat(2, 1fr); }
+    .layer { grid-template-columns: 1fr; gap: 8px; }
+    .project { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<!-- local-only:start -->
+<button class="theme" id="themeBtn" type="button" aria-label="Cambiar tema">Tema</button>
+<!-- local-only:end -->
+<div class="wrap">
+
+  <a class="back" href="index.html"><span aria-hidden="true">←</span> Volver al diario</a>
+
+  <aside class="origin">
+    <b>Sobre esta página</b>
+    <p>El libro <em>Ready Player One</em> se ha procesado con <strong>Gemini Argon 4</strong> para localizar todos los pasajes en los que aparece el parque de caravanas y extraer su ambiente: cómo está construido, cómo se vive en él y qué lo rodea. El objetivo es que el parque procedural sea más fiel al libro, más allá de la película.</p>
+    <p>Lo que sigue es una síntesis propia de esos pasajes, sin reproducir el texto original. <em>Ready Player One</em> © Ernest Cline, 2011.</p>
+  </aside>
+
+  <header class="hero">
+    <div>
+      <p class="kicker">Inspiración · Ready Player One</p>
+      <h1>The Stacks, según el libro</h1>
+      <p>En el libro, Wade Watts crece en un campamento de caravanas fijas a las afueras de Oklahoma City. Tras la crisis del petróleo, el suelo cerca de las ciudades vale demasiado para hileras de caravanas de una planta, así que las apilan con grúas en torres de andamio. La gente las llama «Las Torres».</p>
+      <p>Es a la vez barrio de chabolas, asentamiento okupa y campo de refugiados: una colmena de latas oxidadas que no deja de crecer.</p>
+    </div>
+    <figure>
+      <img src="concept/img_00313_.png" alt="Concept del proyecto: torres de caravanas sobre estructura de vigas, con pasarelas y una plaza al anochecer">
+      <figcaption>Concept del proyecto, no ilustración del libro</figcaption>
+    </figure>
+  </header>
+
+  <section class="numbers" aria-label="Cifras del libro">
+    <div class="num"><b>≈500</b><span>torres en Portland Avenue</span></div>
+    <div class="num"><b>15–22</b><span>plantas por torre</span></div>
+    <div class="num"><b>56-K</b><span>la caravana de la tía Alice</span></div>
+    <div class="num"><b>15</b><span>personas en esa caravana</span></div>
+  </section>
+
+  <section>
+    <h2>La torre, de arriba abajo</h2>
+    <p class="lead">Cómo describe el libro un corte vertical del parque.</p>
+    <div class="tower">
+      <div class="layer roof">
+        <div><h3>El Tejado</h3><span class="where">La cima de cada torre</span></div>
+        <ul>
+          <li>Una sucesión irregular de paneles solares viejos que dan electricidad extra a las viviendas de abajo.</li>
+        </ul>
+      </div>
+      <div class="layer stack">
+        <div><h3>La pila</h3><span class="where">15 a 22 plantas</span></div>
+        <ul>
+          <li>Caravanas fijas simples y de doble anchura, con roulottes tipo Airstream, casas rodantes, furgonetas y contenedores de barco intercalados.</li>
+          <li>Un andamiaje modular reforzado, precario e improvisado, sostiene las de arriba. Cada caravana descansa en una plataforma de acero apenas medio metro más ancha que ella, con una cornisa estrecha alrededor.</li>
+          <li>Vigas, tuberías recicladas y pasadizos elevados conectan unas torres con otras.</li>
+          <li>Mangueras y tuberías corrugadas recorren los laterales para el agua y el desagüe, un lujo que no todas las torres tienen.</li>
+        </ul>
+      </div>
+      <div class="layer ground">
+        <div><h3>El Suelo</h3><span class="where">Plantas bajas y callejones</span></div>
+        <ul>
+          <li>Las caravanas de planta baja siguen sobre la tierra o sobre sus losas de hormigón originales: son el parque de antes.</li>
+          <li>Entre torres, franjas estrechas de tierra y barro a las que apenas llega el sol, con basura, chatarra y coches sin gasolina bloqueando las salidas.</li>
+        </ul>
+      </div>
+      <div class="layer edge">
+        <div><h3>El perímetro</h3><span class="where">Portland Avenue, junto a la I-40</span></div>
+        <ul>
+          <li>Esqueletos de viejas grúas de construcción, las que se usaron para apilar las caravanas.</li>
+          <li>Montañas de coches y camiones abandonados, casi tan altas como las torres. En una de ellas Wade esconde su refugio: una furgoneta de carga.</li>
+          <li>Al otro lado de la autopista, el vertedero de un centro comercial abandonado.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dónde aparece en el libro</h2>
+    <p class="lead">Capítulos que hablan del parque. Los marcados en relleno son los centrales.</p>
+    <ol class="timeline">
+      <li><span class="chap">0000</span><b>Prólogo</b><p>Primera mención: Wade vive en un campamento de caravanas fijas a las afueras de Oklahoma City.</p></li>
+      <li class="key"><span class="chap">0001</span><b>La descripción completa</b><p>La caravana de la tía Alice, el cuartito de la lavadora donde duerme Wade, cómo nacieron las torres según el señor Miller, el descenso por el andamiaje, la Airstream de la señora Gilmore y la Guarida dentro del montículo de coches.</p></li>
+      <li><span class="chap">0002 · 0004</span><b>Escapar de las torres</b><p>El sueño de salir de allí ganando la Cacería y el paro extremo del barrio.</p></li>
+      <li><span class="chap">0010 · 0011 · 0013</span><b>Sin nostalgia</b><p>Wade rechaza sentir nostalgia por las torres, duerme en su furgoneta y planea mudarse con el dinero de los patrocinios.</p></li>
+      <li class="key"><span class="chap">0014</span><b>El atentado</b><p>Sorrento enseña la dirección de Wade y una cámara térmica en directo sobre la caravana de su tía. La explosión derrumba varias torres en dominó.</p></li>
+      <li><span class="chap">0015 · 0016</span><b>El encubrimiento</b><p>Se hace pasar por la explosión de un laboratorio de metanfetamina y Wade huye a Columbus.</p></li>
+      <li><span class="chap">0017</span><b>Lo que queda</b><p>Wade le cuenta a Art3mis que bombardearon su caravana; su diploma llega por correo a una dirección que ya no existe.</p></li>
+      <li><span class="chap">0030</span><b>Las carpetas de IOI</b><p>El expediente de Parzival en IOI termina con el vídeo de la bomba sobre la caravana de su tía.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Glosario del parque</h2>
+    <p class="lead">Los conceptos del libro, agrupados por tema.</p>
+    <div class="gloss">
+      <article class="card">
+        <h3><span class="letter">A</span>Nombres y lugar</h3>
+        <dl>
+          <dt>Las Torres</dt><dd>El nombre coloquial de los antiguos parques de caravanas una vez apilados en rascacielos improvisados.</dd>
+          <dt>Portland Avenue, 700</dt><dd>El complejo de Wade, junto a la autopista I-40, al oeste de Oklahoma City.</dd>
+          <dt>Unidad 56-K</dt><dd>La caravana de la tía Alice. El número guiña a los módems de 56k.</dd>
+        </dl>
+      </article>
+      <article class="card">
+        <h3><span class="letter">B</span>Por qué existen</h3>
+        <dl>
+          <dt>Crisis energética</dt><dd>El fin del petróleo empuja a la gente del campo hacia las ciudades.</dd>
+          <dt>Apilar en vertical</dt><dd>El suelo al que se llega a pie desde la ciudad vale demasiado para caravanas de una planta: se apilan con grúas por todo el país.</dd>
+          <dt>Un híbrido urbano</dt><dd>Mezcla de chabolas, okupas y campo de refugiados, de gente que busca trabajo, comida, electricidad y conexión a Oasis.</dd>
+        </dl>
+      </article>
+      <article class="card">
+        <h3><span class="letter">C</span>Ingeniería improvisada</h3>
+        <dl>
+          <dt>Andamiaje modular</dt><dd>Una filigrana metálica precaria que deja las caravanas de arriba suspendidas sobre las de la planta baja.</dd>
+          <dt>Plataforma con cornisa</dt><dd>Medio metro más ancha que la caravana: el saliente por el que se camina atado a una cuerda.</dd>
+          <dt>Efecto dominó</dt><dd>Si una torre cede hacia el lado malo, puede arrastrar a cuatro o cinco vecinas.</dd>
+        </dl>
+      </article>
+      <article class="card">
+        <h3><span class="letter">D</span>Casas y refugios</h3>
+        <dl>
+          <dt>La caravana de la tía Alice</dt><dd>Doble anchura, planta 22, extremo norte. Tres dormitorios para quince personas.</dd>
+          <dt>El cuartito de la lavadora</dt><dd>El rincón de Wade: calor en invierno, algo de intimidad, wifi y una ventana para escapar por el andamio.</dd>
+          <dt>La Airstream de la señora Gilmore</dt><dd>Tres plantas más abajo: una vecina mayor, muy religiosa y rodeada de gatos.</dd>
+          <dt>La Guarida</dt><dd>Una furgoneta dentro de una montaña de coches, insonorizada, con baterías, una bicicleta generadora y una antena camuflada.</dd>
+        </dl>
+      </article>
+      <article class="card">
+        <h3><span class="letter">E</span>Vida y peligros</h3>
+        <dl>
+          <dt>Vales de comida</dt><dd>La moneda básica. Wade se gana los suyos reparando consolas y ordenadores viejos.</dd>
+          <dt>Inseguridad</dt><dd>Tiroteos nocturnos, delincuencia, mercado negro y laboratorios clandestinos de metanfetamina.</dd>
+          <dt>Propano</dt><dd>Bombonas viejas adosadas a las caravanas: inflamables y explosivas.</dd>
+          <dt>Trabajo</dt><dd>Los pocos con empleo cogen lanzaderas junto a la autopista hacia las fábricas que rodean la ciudad.</dd>
+        </dl>
+      </article>
+      <article class="card">
+        <h3><span class="letter">F</span>Cultura y final</h3>
+        <dl>
+          <dt>El juego «Las Torres»</dt><dd>El primer juego de Wade para Atari 2600: un laberinto vertical de caravanas al estilo de Pitfall.</dd>
+          <dt>El atentado de IOI</dt><dd>Una bomba en la unidad 56-K tira la torre y las vecinas. Los restos se quedan oxidándose en el suelo.</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Del libro al proyecto</h2>
+    <p class="lead">Qué se ha llevado al parque procedural y qué espera su turno.</p>
+    <div class="project">
+      <div class="col yes">
+        <h3>Ya en el parque</h3>
+        <p class="tagline">Aplicado en la fase 2</p>
+        <ul>
+          <li>Plaza pequeña, como claro del barrio, y callejones estrechos de 3 m entre torres.</li>
+          <li>Paneles solares solo en los techos libres: el Tejado.</li>
+          <li>Contenedores de barco intercalados en las pilas.</li>
+          <li>Óxido por unidad, mayor cerca del suelo.</li>
+          <li>Bombonas de propano en las caravanas con lanza.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>En la lista de ideas</h3>
+        <p class="tagline">Para más adelante</p>
+        <ul>
+          <li>Planta baja como el parque original, sobre sus losas.</li>
+          <li>Plataformas ajustadas con cornisa y más escaleras de mano.</li>
+          <li>Grúas abandonadas y el paso elevado de la I-40.</li>
+          <li>Montañas de coches, coches en los callejones y tuberías por las fachadas.</li>
+          <li>Guiños: la unidad 56-K, la Guarida y las ruinas del atentado.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Fuera por escala</h3>
+        <p class="tagline">Decisión de diseño</p>
+        <ul>
+          <li>Torres de 15–22 plantas: el parque se queda en 8 como máximo, para que sea legible y ligero.</li>
+          <li>500 torres: el proyecto tiene unas 20 torres y unas 160 caravanas. El horizonte lleno de torres será un fondo pintado.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>Procedural Caravans · inspiración · <a href="index.html">volver al diario</a></footer>
+</div>
+
+<script>
+  (function () {
+    /* local-only:start */
+    var root = document.documentElement;
+    var btn = document.getElementById('themeBtn');
+    try {
+      var saved = localStorage.getItem('pc-theme');
+      if (saved) root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    btn.addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme') === 'dark' ||
+        (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var next = dark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('pc-theme', next); } catch (e) {}
+    });
+    /* local-only:end */
+  })();
+</script>
+</body>
+</html>
