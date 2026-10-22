@@ -179,13 +179,13 @@
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 2 · bloque 1</span><span>22 oct 2026</span></div>
-    <h3>El solar: una plaza, seis barrios y las calles entre ellos</h3>
+    <h3>El solar: una plaza, seis barrios y los callejones entre ellos</h3>
     <div class="shots">
-      <figure><img src="capturas/fase2_b1_solar_plaza_clusters.png" alt="Vista cenital del solar en celdas de 3 m: plaza central, seis clusters de colores y calles grises radiales"><figcaption>Vista cenital: plaza en el centro, un color por cluster y calles en gris</figcaption></figure>
+      <figure><img src="capturas/fase2_b1_solar_plaza_clusters.png" alt="Vista cenital del solar en celdas de 3 m: plaza central naranja, seis clusters de colores y callejones grises radiales"><figcaption>Vista cenital: la plaza en naranja, un color por cluster y los callejones en gris</figcaption></figure>
     </div>
-    <p>Empieza el parque. El solar es una rejilla de celdas de 3 × 3 m (26 × 26 por defecto, 78 m de lado), y cada celda es un punto que sabe dónde está y a qué zona pertenece: plaza, calle o suelo edificable. Alrededor de la plaza se reparten seis centros de cluster en anillo, girados y desordenados por la semilla. Cada celda pertenece al centro más cercano, y en la frontera entre dos clusters nace una calle. De 676 celdas, 521 quedan edificables, 95 son calle y 60 son plaza.</p>
-    <div class="note"><b>Nota técnica</b>Las calles no son celdas pintadas, sino curvas de verdad. Los centros pasan por <code>voronoiadjacency</code> y <code>voronoisplit</code>, que parten el solar en regiones, y los bordes de esas regiones se convierten en líneas. Cada celda mide su distancia a esas líneas con <code>xyzdist</code>: si está a menos de medio ancho de calle, es calle. La plaza usa la misma prueba contra un polígono. Así, cuando se pueda dibujar la plaza o las calles a mano, bastará con cambiar la curva de entrada: el resto de la red no se entera.</div>
-    <div class="facts"><span>+7 sliders</span><span>676 celdas</span><span>6 clusters</span><span>calles de 4,5 m</span></div>
+    <p>Empieza el parque. El solar es una rejilla de celdas de 3 × 3 m (26 × 26 por defecto, 78 m de lado), y cada celda es un punto que sabe dónde está y a qué zona pertenece: plaza, calle o suelo edificable. Alrededor de la plaza se reparten seis centros de cluster en anillo, girados y desordenados por la semilla. Cada celda pertenece al centro más cercano, y en la frontera entre dos clusters nace un callejón. Para ser fiel al libro, donde el suelo son franjas estrechas de barro entre torres, la plaza es solo un claro de 9 m de radio y los callejones miden 3 m. De 676 celdas, 577 quedan edificables, 67 son callejón y 32 son plaza.</p>
+    <div class="note"><b>Nota técnica</b>Las calles no son celdas pintadas, sino curvas de verdad. Los centros pasan por <code>voronoiadjacency</code> y <code>voronoisplit</code>, que parten el solar en regiones, y los bordes de esas regiones se convierten en líneas. Cada celda mide su distancia a esas líneas con <code>xyzdist</code>: si está a menos de medio ancho de callejón, es callejón. La plaza usa la misma prueba contra un polígono. Así, cuando se pueda dibujar la plaza o las calles a mano, bastará con cambiar la curva de entrada: el resto de la red no se entera.</div>
+    <div class="facts"><span>+7 sliders</span><span>676 celdas</span><span>6 clusters</span><span>callejones de 3 m</span></div>
   </article>
 
   <article class="entry">
