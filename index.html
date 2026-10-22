@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>3</b><span>Fase en curso</span></div>
+    <div class="stat"><b>4</b><span>Fase siguiente</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>279</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -179,8 +179,8 @@
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
     <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
-    <li class="doing"><span class="n">3</span>Estructura metálica<span class="st">En curso · bloque 4 de 5</span></li>
-    <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
+    <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
+    <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Siguiente</span></li>
     <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
@@ -204,6 +204,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 3 · bloque 5 · cierre</span><span>22 oct 2026</span></div>
+    <h3>Acero de verdad, y nada flota</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase3_b5_estructura_final.png" alt="Torres de caravanas con estructura metálica completa: pilares, vigas, bandejas, cruces y zapatas"><figcaption>La estructura final del parque, con las caravanas en sus colores de pintura</figcaption></figure>
+      <figure><img src="capturas/fase3_b5_perfiles_cerca.png" alt="Vista cercana de vigas IPE en I, tubos de andamio, bandejas y zapatas de hormigón"><figcaption>De cerca: IPE en I abajo, tubo de andamio arriba y zapatas en el arranque</figcaption></figure>
+    </div>
+    <p>Las barras provisionales se convierten en perfiles reales: vigas y pilares en I en los pisos bajos, tubo de andamio arriba, bandejas de rejilla con su canto y zapatas de hormigón bajo cada pilar. Pero lo importante de este bloque no se ve: una comprobación recorre la estructura piso a piso y demuestra que cada bandeja llega al suelo por algún camino de vigas y pilares. Encontró cuatro trozos de forjado sueltos, caravanas interiores que no tocaban ningún pilar, y los sujetó con dieciséis postes. Con eso se cierra la fase 3.</p>
+    <div class="note"><b>Nota técnica</b>La comprobación es un grafo. Cada trozo de forjado conectado de un piso es un nodo, y está sujeto si toca un pilar que llega a su altura. De abajo arriba, a un trozo suelto se le buscan esquinas que tengan debajo otro trozo ya sujeto (o el suelo), y ahí se pone un poste de tubo. Como los postes van siempre en esquinas de celda, quedan fuera de las carrocerías: una última comprobación contra la malla real de las caravanas da cero roces. Además, toda la estructura lleva su orden de aparición, para que el visualizador la construya piso a piso, justo antes que las caravanas de cada nivel.</div>
+    <div class="facts"><span>87 trozos de forjado</span><span>16 postes de rescate</span><span>0 flotantes</span><span>26.716 polígonos</span><span>20 ms</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 3 · bloque 4</span><span>22 oct 2026</span></div>
