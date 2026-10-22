@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>3</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>278</b><span>Sliders creados</span></div>
+    <div class="stat"><b>279</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -179,7 +179,7 @@
     <li class="done"><span class="n">1a</span>Generadores de caravana<span class="st">Hecha · 8 tipos, 32 subvariantes</span></li>
     <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
-    <li class="doing"><span class="n">3</span>Estructura metálica<span class="st">En curso · bloque 3 de 5</span></li>
+    <li class="doing"><span class="n">3</span>Estructura metálica<span class="st">En curso · bloque 4 de 5</span></li>
     <li class="todo"><span class="n">4</span>Circulación y accesos<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 3 · bloque 4</span><span>22 oct 2026</span></div>
+    <h3>Cruces de San Andrés: ya es un andamio</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase3_b4_arriostramiento.png" alt="Torres de cajas de colores con pilares, bandejas y cruces diagonales finas en las fachadas"><figcaption>Cruces finas en las caras de las torres, entre pilar y pilar</figcaption></figure>
+    </div>
+    <p>La estructura gana su última capa de lectura: cruces de San Andrés en las fachadas de las torres. Cada tramo entre dos pilares vecinos, en cada piso, es un panel candidato, y aproximadamente uno de cada tres lleva su cruz de tubo. Hay paneles que nunca la llevan: los que tienen delante una caravana en voladizo o el hueco reservado para una puerta, porque la cruz los taparía. Salen 120 cruces, más densas abajo, donde la torre carga más.</p>
+    <div class="note"><b>Nota técnica</b>Los paneles no existen como geometría: son combinaciones de pilar, dirección y piso. Cada pilar recibe una plantilla de 32 candidatos y un wrangle busca a su vecino por su identificador de nudo, comprueba que los dos lleguen a ese piso y que la arista entre ellos sea borde de la torre, y consulta la rejilla de ocupación para no tapar nada. Lo que sobrevive se convierte en dos diagonales con una línea orientada y estirada, la misma técnica que en las ménsulas.</div>
+    <div class="facts"><span>+1 slider</span><span>120 cruces</span><span>240 diagonales</span><span>0 roces</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 3 · bloque 3</span><span>22 oct 2026</span></div>
