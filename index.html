@@ -198,8 +198,8 @@
   <div class="section-row" id="avances">
     <h2 class="section">Avances</h2>
     <div class="order" role="group" aria-label="Orden de las entradas">
-      <button type="button" data-order="new" aria-pressed="true">Lo último primero</button>
-      <button type="button" data-order="old" aria-pressed="false">Desde el principio</button>
+      <button type="button" data-order="new" aria-pressed="false">Lo último primero</button>
+      <button type="button" data-order="old" aria-pressed="true">Desde el principio</button>
     </div>
   </div>
 
@@ -1020,6 +1020,8 @@
     orderBtns.forEach(function (b) {
       b.addEventListener('click', function () { setOrder(b.dataset.order); });
     });
+    // Por defecto se lee como una historia: de la primera entrada a la última
+    setOrder('old');
     document.getElementById('fromStart').addEventListener('click', function (ev) {
       ev.preventDefault();
       setOrder('old');
