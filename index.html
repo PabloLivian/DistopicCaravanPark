@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>7</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>312</b><span>Sliders creados</span></div>
+    <div class="stat"><b>314</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -183,7 +183,7 @@
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
-    <li class="doing"><span class="n">7</span>Lookdev y luz<span class="st">En curso · bloque 4 de 6</span></li>
+    <li class="doing"><span class="n">7</span>Lookdev y luz<span class="st">En curso · bloque 5 de 6</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
@@ -204,6 +204,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 7 · bloque 5</span><span>23 oct 2026</span></div>
+    <h3>Se encienden las luces</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase7_b5_anochecer_norte.jpg" alt="Render de Karma del parque a la hora azul: caravanas con ventanas encendidas y pilotos rojos, y al fondo la ciudad con miles de ventanas iluminadas"><figcaption>La hora azul: más de la mitad de las caravanas tiene luz dentro y la ciudad se enciende detrás</figcaption></figure>
+      <figure><img src="capturas/fase7_b5_plaza.jpg" alt="Vista cercana de la plaza al anochecer: los puestos proyectan charcos de luz cálida sobre el suelo, rodeados de andamios en penumbra azul"><figcaption>La plaza: cada puesto tiene su bombilla y proyecta luz cálida en el suelo</figcaption></figure>
+      <figure><img src="capturas/fase7_b5_plaza_niebla.jpg" alt="La misma vista de la plaza con niebla volumétrica: las luces de los puestos quedan envueltas en un halo"><figcaption>La misma vista con niebla volumétrica: más atmósfera, render un 50 % más lento</figcaption></figure>
+    </div>
+    <p>Cae la noche en el parque. Un interruptor pasa del atardecer a la hora azul, y con él se encienden las luces: las ventanas de más de la mitad de las caravanas (cálidas casi todas, alguna con el azul de una pantalla), los pilotos rojos, las pantallas del puesto de electrónica y una bombilla en cada puesto de la plaza. La ciudad del fondo también se ilumina. La niebla volumétrica queda como opción, con su coste medido.</p>
+    <div class="note"><b>Nota técnica</b>Qué caravanas tienen luz no se decide en el material, sino en la nube de puntos: un slider marca el porcentaje y cada instancia guarda si está encendida y de qué color. El material lo lee y, con un ruido celular por ventana, enciende solo algunas de cada caravana. La emisión sola no ilumina el suelo, así que las bombillas de los puestos son luces de verdad: de cada puesto se saca un punto y en cada punto se copia una luz esférica. El mismo interruptor de ambiente cambia el cielo, el color de la bruma y cuántas luces hay encendidas.</div>
+    <div class="facts"><span>87 de 147 caravanas con luz</span><span>24 luces de puesto</span><span>+2 sliders</span><span>1080p: 50–74 s</span><span>niebla: ×1,5–1,9</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 7 · bloque 4</span><span>23 oct 2026</span></div>
