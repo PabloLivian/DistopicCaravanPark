@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>5</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>286</b><span>Sliders creados</span></div>
+    <div class="stat"><b>294</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -181,7 +181,7 @@
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
-    <li class="doing"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">En curso · bloque 2 de 6</span></li>
+    <li class="doing"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">En curso · bloque 3 de 6</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 5 · bloque 3</span><span>23 oct 2026</span></div>
+    <h3>Bidones, cajas y botellas</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase5_b3_clutter.png" alt="Pasarelas y suelo del parque con bidones y cajas resaltados en naranja"><figcaption>Los objetos sueltos, en naranja: un bidón en el rincón de una pasarela y cajas junto a las fachadas</figcaption></figure>
+    </div>
+    <p>El parque empieza a parecer habitado: bidones, cajas, botellas y maletas de electrónica en los rincones de las pasarelas, en las esquinas de los forjados de las escaleras y en el suelo, arrimados a las fachadas. Nunca en medio del paso: siempre queda al menos 0,8 m libre, así que las 117 puertas siguen teniendo salida. Ocho sliders controlan cuánto hay y de qué tipo, y cambiar su semilla no mueve nada más.</p>
+    <div class="note"><b>Nota técnica</b>El truco es separar el dónde del qué. Primero se calculan los huecos en los que un objeto no estorba: el rincón exterior de un cruce en esquina, el fondo de saco de una pasarela, una franja junto a una fachada. Después cada hueco elige por pesos un objeto que quepa en él. La regla del paso libre queda garantizada al construir los huecos, y la comprobación final solo tiene que confirmar que no hay roces.</div>
+    <div class="facts"><span>+8 sliders</span><span>319 huecos</span><span>111 objetos</span><span>0 roces</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 5 · bloque 2</span><span>23 oct 2026</span></div>
