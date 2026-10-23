@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>6</b><span>Fase en curso</span></div>
+    <div class="stat"><b>7</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>312</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -182,7 +182,7 @@
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
-    <li class="doing"><span class="n">6</span>HDA e interfaz<span class="st">En curso · bloque 4 de 5</span></li>
+    <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 6 · bloque 5 · cierre</span><span>23 oct 2026</span></div>
+    <h3>Cada slider, a la décima de segundo</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase6_b5_recocinado_por_pestana.png" alt="Gráfico de barras con el tiempo de recocinado del parque al mover un slider de cada pestaña: unos 0,2 segundos en las primeras etapas y casi nada en las últimas"><figcaption>Lo que tarda el parque en responder a cada pestaña de sliders</figcaption></figure>
+    </div>
+    <p>La fase 6 se cierra con la prueba que la define: mover cualquier slider y ver cuánto tarda el parque en rehacerse. Se midieron los 84, uno a uno, con el parque completo y todas las piezas reales. El peor caso, cambiar el tamaño del solar, tarda 0,23 segundos; de media, una décima. La herramienta responde en tiempo real.</p>
+    <div class="note"><b>Nota técnica</b>El gráfico enseña la arquitectura. Los sliders del principio de la cadena (solar, apilado, unidades) obligan a rehacer todo lo que viene detrás y rondan las dos décimas; los del final (basura, cables, visualización) solo recocinan su etapa y tardan milésimas. Cada etapa termina en un punto de lectura estable y tiene su propia semilla, así que Houdini solo recalcula lo que de verdad depende del cambio. Con estos tiempos no hace falta cachear ninguna etapa.</div>
+    <div class="facts"><span>84 sliders medidos</span><span>máximo 0,23 s</span><span>media 0,10 s</span><span>clutter: 0,008 s</span><span>0 caches necesarias</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 6 · bloque 4</span><span>23 oct 2026</span></div>
