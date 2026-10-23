@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>6</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>309</b><span>Sliders creados</span></div>
+    <div class="stat"><b>312</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -182,7 +182,7 @@
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
-    <li class="doing"><span class="n">6</span>HDA e interfaz<span class="st">En curso · bloque 2 de 5</span></li>
+    <li class="doing"><span class="n">6</span>HDA e interfaz<span class="st">En curso · bloque 3 de 5</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
@@ -204,6 +204,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 6 · bloque 3</span><span>23 oct 2026</span></div>
+    <h3>Un asset con tres caras</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase6_b3_preset_calle.png" alt="Parque con el preset Calle: torres bajas de dos a cuatro pisos, calles anchas, puestos y contenedores en el suelo"><figcaption>Preset Calle: escala humana, de 2 a 4 pisos y mucha vida a pie de calle</figcaption></figure>
+      <figure><img src="capturas/fase6_b3_preset_denso.png" alt="Parque con el preset Denso: torres de ocho pisos muy juntas, con pasarelas y callejones estrechos"><figcaption>Preset Denso: 8 pisos, caos máximo y pasarelas cruzando el vacío</figcaption></figure>
+      <figure><img src="capturas/fase6_b3_preset_ordenado.png" alt="Parque con el preset Ordenado: pilas de caravanas casi alineadas"><figcaption>Preset Ordenado: las mismas reglas con el caos casi a cero</figcaption></figure>
+    </div>
+    <p>El generador ya es un HDA: un nodo que se suelta en cualquier escena y produce el parque entero desde su interfaz. Arriba de todo hay un menú de estilos que reconfigura decenas de sliders de una vez: <em>Calle</em>, a escala humana como la referencia del atardecer; <em>Denso</em>, la versión vertical de la referencia nocturna; y <em>Ordenado</em>, el mismo sistema con el caos casi a cero, como contraste. La interfaz queda completa, con ayuda en cada slider y dos controles nuevos para el visualizador: una línea de tiempo de construcción y un aislador de etapas.</p>
+    <div class="note"><b>Nota técnica</b>Los presets no son fotos de valores: cada uno devuelve el parque a su estado de referencia y cambia solo lo que define su estilo, sin tocar las semillas, así que se pueden combinar con cualquier variante. El código vive dentro del propio asset. Para darlo por bueno, se creó una instancia nueva en otra parte de la escena, sin entradas ni ajustes: su huella coincide pieza a pieza con la del parque de referencia. Y en los cuatro estilos todas las puertas siguen llegando al suelo.</div>
+    <div class="facts"><span>+3 sliders</span><span>3 presets + por defecto</span><span>de 93 a 265 unidades</span><span>0,11–0,32 s por preset</span><span>100 % accesible</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 6 · bloque 2</span><span>23 oct 2026</span></div>
