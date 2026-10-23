@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>4</b><span>Fase en curso</span></div>
+    <div class="stat"><b>5</b><span>Fase siguiente</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>286</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -180,8 +180,8 @@
     <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
-    <li class="doing"><span class="n">4</span>Circulación y accesos<span class="st">En curso · bloque 4 de 5</span></li>
-    <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
+    <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
+    <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Siguiente</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
@@ -204,6 +204,14 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 4 · bloque 5 · cierre</span><span>23 oct 2026</span></div>
+    <h3>Toda puerta llega al suelo</h3>
+    <p>La fase de circulación se cierra con la prueba que la define: desde cada puerta de los pisos altos se busca un camino por la red ya construida (pasarelas, escaleras, escaleras de mano y puentes) hasta el suelo. Las 117 lo tienen. La prueba encontró además una puerta que las comprobaciones anteriores habían dejado pasar: en el borde del solar, encerrada entre dos caravanas, la escalera de su torre y otra caravana debajo. Ahora sale por una escalera de mano al piso de arriba. Toda la circulación lleva su etapa y su orden de aparición para el visualizador.</p>
+    <div class="note"><b>Nota técnica</b>La comprobación final no reutiliza el grafo con el que se trazaron las pasarelas, sino la red resultante: así mide lo que de verdad se ha construido. Fue lo que destapó el fallo: el nodo que limpiaba las aristas sobrantes borraba también los puntos que se quedaban sin aristas, y con ellos desaparecía la única puerta sin vecinos libres. Ahora las aristas se borran conservando los puntos.</div>
+    <div class="facts"><span>117 / 117 puertas</span><span>0 roces</span><span>18.875 piezas con orden de aparición</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 4 · bloque 4</span><span>23 oct 2026</span></div>
