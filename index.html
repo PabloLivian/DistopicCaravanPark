@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>5</b><span>Fase en curso</span></div>
+    <div class="stat"><b>6</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>308</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -181,7 +181,7 @@
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
-    <li class="doing"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">En curso · bloque 5 de 6</span></li>
+    <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
@@ -204,6 +204,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 5 · bloque 6 · cierre</span><span>23 oct 2026</span></div>
+    <h3>El parque, entero</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase5_b6_parque_completo.png" alt="Vista aérea del parque completo: torres de caravanas de colores sobre estructura metálica, pasarelas, escaleras, la plaza y el suelo de tierra"><figcaption>Primer render de viewport del parque completo</figcaption></figure>
+      <figure><img src="capturas/fase5_b6_plaza_mercado_cables.png" alt="La plaza vista desde arriba con los bloques de puestos, postes con cables y caravanas con aire acondicionado alrededor"><figcaption>La plaza: mercado, postes y cables entre las torres</figcaption></figure>
+    </div>
+    <p>Se cierra la fase 5 con el parque montado de punta a punta: caravanas y contenedores reales, estructura, pasarelas con barandillas, equipamiento, clutter, suelo, mercado y tendido eléctrico. Ya no hay cajas de colores: lo que se ve es lo que se renderizará. El cierre también deja preparado el visualizador: cada pieza sabe en qué etapa nace y en qué orden aparece.</p>
+    <div class="note"><b>Nota técnica</b>Cada etapa marcaba su orden de construcción donde le venía mejor: en el punto de cada instancia o en la primitiva de cada barrido. Al juntarlo todo, el valor que faltaba se rellenaba con un cero y media estructura parecía nacer a la vez que el suelo. Un último nodo normaliza la etiqueta por pieza antes de la salida, de modo que en la fase 9 bastará con un solo parámetro para ver crecer el parque. Y todo el parque se recocina en menos de dos décimas de segundo al cambiar la semilla, así que no hace falta cachear nada.</div>
+    <div class="facts"><span>52.617 primitivas</span><span>3.556 instancias packed</span><span>6 etapas con orden de construcción</span><span>0,17 s al cambiar la semilla</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 5 · bloque 5</span><span>23 oct 2026</span></div>
