@@ -183,7 +183,7 @@
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
-    <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
+    <li class="doing"><span class="n">7</span>Lookdev y luz<span class="st">En curso · bloque 1 de 6</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 7 · bloque 1</span><span>23 oct 2026</span></div>
+    <h3>El parque entra en Karma</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase7_b1_karma_primvars.png" alt="Render de Karma del parque completo con cada caravana y contenedor de su color"><figcaption>Primer render de Karma: cada caravana y cada contenedor con su propio color, leído de la instancia</figcaption></figure>
+    </div>
+    <p>Empieza el lookdev. El parque pasa a Solaris, el entorno de render de Houdini basado en USD, y se renderiza con Karma en la GPU. Todavía no hay materiales de verdad: esta prueba solo confirma que lo importante llega bien. Las 3.556 piezas siguen siendo instancias de solo 96 modelos, y cada una conserva su color, su nivel de óxido y su paleta, listos para que los materiales los lean.</p>
+    <div class="note"><b>Nota técnica</b>Para el render no se usa el asset en vivo, sino una caché congelada del parque de referencia: el lookdev no depende de cómo esté el viewport y es la misma estrategia que tendrá la cinemática. Cada pieza llega como instancia nativa de USD con sus atributos como «primvars», y los grupos de material de cada modelo (carrocería, cristal, metal, madera...) se convierten en subconjuntos sobre los que se asignarán los materiales. Una trampa de USD: no se puede escribir dentro de una instancia, así que los materiales se asignarán a los modelos originales y todas sus copias los heredarán.</div>
+    <div class="facts"><span>3.556 instancias</span><span>96 modelos</span><span>494 subconjuntos de material</span><span>Karma XPU</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 6 · bloque 5 · cierre</span><span>23 oct 2026</span></div>
