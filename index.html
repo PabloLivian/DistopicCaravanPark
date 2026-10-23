@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>5</b><span>Fase siguiente</span></div>
+    <div class="stat"><b>5</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>286</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -181,7 +181,7 @@
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
-    <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Siguiente</span></li>
+    <li class="doing"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">En curso · bloque 1 de 6</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 5 · bloque 1</span><span>23 oct 2026</span></div>
+    <h3>Adiós a las cajas: llegan las caravanas</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase5_b1_unidades_reales.png" alt="Caravanas reales de colores apiladas sobre la estructura metálica, con pasarelas y barandillas"><figcaption>Las caravanas del pool, cada una con su color, sobre la estructura y la circulación</figcaption></figure>
+    </div>
+    <p>Las cajas de colores que han servido para diseñar el apilado se sustituyen por las caravanas y contenedores reales. Cada punto de unidad ya sabía qué subvariante del pool le tocaba y dónde estaba su pivote, así que el cambio es un único nodo. Empieza la fase 5, que llena el parque de vida: equipamiento, objetos sueltos, puestos, postes y cables.</p>
+    <div class="note"><b>Nota técnica</b>Es la regla de oro del proyecto en acción: los puntos deciden y la geometría se copia al final. 162 unidades salen de solo 32 mallas de caravana horneadas a disco más los contenedores, todas como instancias packed. El color y el óxido no están en la malla, sino en atributos de cada instancia, que Karma leerá como primvars.</div>
+    <div class="facts"><span>162 instancias</span><span>32 mallas de caravana</span><span>1 nodo</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 4 · bloque 5 · cierre</span><span>23 oct 2026</span></div>
