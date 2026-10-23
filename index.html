@@ -181,7 +181,7 @@
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
-    <li class="doing"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">En curso · bloque 1 de 6</span></li>
+    <li class="doing"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">En curso · bloque 2 de 6</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 5 · bloque 2</span><span>23 oct 2026</span></div>
+    <h3>Placas, antenas y aires acondicionados</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase5_b2_equipamiento.png" alt="Caravanas de colores con paneles solares en mástil, una parabólica y aparatos de aire acondicionado en naranja"><figcaption>El equipamiento resaltado en naranja: paneles solares, parabólica y aires acondicionados</figcaption></figure>
+    </div>
+    <p>Las caravanas reciben su tecnología reciclada. Los paneles solares y las parabólicas solo van en techos libres, donde llega el sol y la señal; los aires acondicionados se cuelgan de la fachada que no da a una pasarela, para no estorbar el paso; las cajas de electrónica van arriba si hay sitio y, si no, junto a la fachada. Son 114 piezas sin un solo roce con la estructura, las pasarelas o las caravanas vecinas.</p>
+    <div class="note"><b>Nota técnica</b>Cada caravana del pool trae puntos de anclaje en su propio espacio: techo, fachada y puerta. Un wrangle los lleva al mundo con la posición y la orientación de cada instancia y decide qué aparato va en cada uno consultando la ocupación y la red de pasarelas. Sea cual sea el modelo de caravana, el equipamiento cae en su sitio. La captura destapó un fallo que las comprobaciones numéricas no veían: los puntos nuevos heredaban un tamaño cero de las unidades y las piezas salían aplastadas.</div>
+    <div class="facts"><span>114 piezas</span><span>60 AC</span><span>25 solares</span><span>18 cajas tech</span><span>11 parabólicas</span><span>0 roces</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 5 · bloque 1</span><span>23 oct 2026</span></div>
