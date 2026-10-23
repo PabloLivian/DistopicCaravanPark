@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>283</b><span>Sliders creados</span></div>
+    <div class="stat"><b>286</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -180,7 +180,7 @@
     <li class="done"><span class="n">1b</span>Resto del kit<span class="st">Hecha · 89 piezas en 6 familias</span></li>
     <li class="done"><span class="n">2</span>Layout y apilado<span class="st">Hecha · 162 unidades, 6 bloques</span></li>
     <li class="done"><span class="n">3</span>Estructura metálica<span class="st">Hecha · nada flota</span></li>
-    <li class="doing"><span class="n">4</span>Circulación y accesos<span class="st">En curso · bloque 3 de 5</span></li>
+    <li class="doing"><span class="n">4</span>Circulación y accesos<span class="st">En curso · bloque 4 de 5</span></li>
     <li class="todo"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">6</span>HDA e interfaz<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">7</span>Lookdev y luz<span class="st">Pendiente</span></li>
@@ -204,6 +204,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 4 · bloque 4</span><span>23 oct 2026</span></div>
+    <h3>Barandillas: intactas, rotas o ninguna</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase4_b4_barandillas_cerca.png" alt="Pasarelas de rejilla con barandillas de tubo, algunas dobladas, entre torres de caravanas"><figcaption>Barandillas en los bordes abiertos; algunas dobladas y otras que faltan</figcaption></figure>
+      <figure><img src="capturas/fase4_b4_barandillas_parque.png" alt="Vista general del parque con toda la circulación y sus barandillas"><figcaption>El parque con barandillas</figcaption></figure>
+    </div>
+    <p>Cada borde de pasarela por el que alguien podría caerse lleva barandilla, salvo por donde se entra: el lado de la puerta, la llegada de la escalera o la de una escalera de mano. Luego el desgaste: dos de cada tres tramos están intactos, uno de cada cuatro está roto y el resto ha desaparecido, con tres sliders para cambiar la mezcla. Donde un pilar cae en la línea de la barandilla, la barandilla se corta y el pilar hace de montante.</p>
+    <div class="note"><b>Nota técnica</b>Cada borde es solo un punto con su longitud y su orientación, y una sola regla decide si está abierto: si por ese lado no sale nada (otro tramo, un rellano o una escalera), lleva barandilla. Para no atravesar pilares, cada tramo busca en planta, con una nube de puntos, los pilares que caen en su línea y se parte en trozos alrededor de ellos. El estado de cada trozo sale de su posición, así que no cambia aunque cambie el orden de la geometría. Las piezas son las barandillas del kit, estiradas a lo largo.</div>
+    <div class="facts"><span>+3 sliders</span><span>2.069 tramos</span><span>65 / 26 / 9 %</span><span>0 roces</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 4 · bloque 3</span><span>23 oct 2026</span></div>
