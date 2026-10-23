@@ -183,7 +183,7 @@
     <li class="done"><span class="n">4</span>Circulación y accesos<span class="st">Hecha · toda puerta llega al suelo</span></li>
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
-    <li class="doing"><span class="n">7</span>Lookdev y luz<span class="st">En curso · bloque 2 de 6</span></li>
+    <li class="doing"><span class="n">7</span>Lookdev y luz<span class="st">En curso · bloque 3 de 6</span></li>
     <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
@@ -204,6 +204,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 7 · bloque 3</span><span>23 oct 2026</span></div>
+    <h3>Óxido con memoria</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase7_b3_oxido_detalle.jpg" alt="Detalle de render: caravanas con óxido y manchas, una mobile home oxidada por abajo, pasarelas de rejilla calada y barriles oxidados"><figcaption>Cada pieza se oxida a su manera: más abajo, en chorreones, y la rejilla ya deja pasar la luz</figcaption></figure>
+      <figure><img src="capturas/fase7_b3_oxido_plaza.jpg" alt="Render de Karma de la plaza con los materiales desgastados"><figcaption>Render de prueba de la plaza: 1920×1080 en unos 48 segundos</figcaption></figure>
+    </div>
+    <p>El parque envejece. La pintura de cada caravana se mancha, se oxida por abajo y chorrea; los contenedores y los barriles tienen su propio nivel de óxido; el galvanizado se ensucia; la estructura distingue la viga IPE pintada del tubo de andamio; y el suelo de las pasarelas pasa a ser rejilla de verdad, con huecos por los que se ve lo de abajo.</p>
+    <div class="note"><b>Nota técnica</b>El desgaste no está pintado: es una máscara que se calcula al renderizar. Tres ruidos a distintas escalas (zonas grandes, chorreones verticales y detalle) se suman a la suciedad de la parte baja de cada pieza y al nivel de óxido guardado en cada instancia. Con la misma máscara salen tres capas: la mancha, el óxido macizo y la suciedad del metal. La rejilla tampoco es geometría: el material vuelve transparentes los huecos según la posición en el mundo. El primer intento parecía un camuflaje militar; la versión buena salió de mezclar las tres escalas.</div>
+    <div class="facts"><span>24 materiales</span><span>3 capas de desgaste</span><span>rejilla calada</span><span>render 1080p en ≈48 s</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 7 · bloque 2</span><span>23 oct 2026</span></div>
