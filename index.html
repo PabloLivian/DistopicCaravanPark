@@ -168,8 +168,8 @@
 
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>8</b><span>Fase en curso</span></div>
-    <div class="stat"><b>8 / 8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>314</b><span>Sliders creados</span></div>
+    <div class="stat"><b>7</b><span>Tipos de caravana</span></div>
+    <div class="stat"><b>315</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -204,6 +204,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Revisión · bloque 1</span><span>6 nov 2026</span></div>
+    <h3>Adiós al bosque de andamios</h3>
+    <div class="shots">
+      <figure><img src="capturas/rev_b1_vigas_antes_despues.jpg" alt="Comparación a pie de calle: a la izquierda, un bosque de tubos verticales delante de las caravanas; a la derecha, la misma calle despejada, con pasarelas sujetas por vigas de acero"><figcaption>El mismo plano a pie de calle, antes y después</figcaption></figure>
+      <figure><img src="capturas/rev_b1_vigas_dron.jpg" alt="Vista de dron del parque al atardecer, con las torres de caravanas más limpias y sin tubos largos bajo las pasarelas"><figcaption>Desde el dron, las torres se leen más limpias</figcaption></figure>
+    </div>
+    <p>Ronda de pulido antes del detalle fino. El food truck sale del parque: no convencía como vivienda. Y las pasarelas dejan de apoyarse en el suelo: cada una se sujeta a la torre que tiene al lado con una viga de acero corta. Donde antes había 1.504 patas de tubo, ahora hay 103 vigas, y la calle se ha quedado despejada.</p>
+    <div class="note"><b>Nota técnica</b>Antes de rediseñar se midió el problema: nueve de cada diez nudos de pasarela tenían una viga de su torre a menos de 3 metros. Las patas no hacían falta. Ahora cada tramo se trata como una arista de un grafo y el sistema busca el conjunto de apoyos más barato con una regla sencilla: ningún tramo puede quedar con los dos extremos al aire. Así la luz máxima es de 6 metros y no hace falta una viga en cada nudo. Lo que no llega a ninguna viga recibe un pie derecho, y son solo seis.</div>
+    <div class="facts"><span>1.504 patas → 103 vigas</span><span>7.959 m de tubo → 16 m</span><span>luz máxima de 6 m</span><span>0 roces</span><span>126/126 puertas accesibles</span><span>+1 slider</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 7 · bloque 6 · cierre</span><span>23 oct 2026</span></div>
