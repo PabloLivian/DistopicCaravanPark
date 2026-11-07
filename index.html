@@ -184,7 +184,7 @@
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
-    <li class="todo"><span class="n">8</span>Desgaste y detalle fino<span class="st">Pendiente</span></li>
+    <li class="doing"><span class="n">8</span>Desgaste y detalle fino<span class="st">En curso · desgaste dirigido</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 8 · bloques 1 y 2</span><span>7 nov 2026</span></div>
+    <h3>El óxido sabe dónde ir</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase8_b2_desgaste_antes_despues.jpg" alt="Cuatro renders al atardecer: a la izquierda, una autocaravana y una calle con manchas de óxido repartidas por igual por toda la chapa; a la derecha, el óxido concentrado en la parte baja, las aristas y los rebajes, y los neumáticos negros"><figcaption>Antes (izquierda) y después (derecha): el óxido se acumula abajo, en las aristas y en los rebajes</figcaption></figure>
+    </div>
+    <p>La fase 8 empieza con un diagnóstico: renders a pie de calle para ver qué delata que el parque es de juguete. Lo primero era el óxido. Salía a manchas de camuflaje repartidas por igual, como si la chapa se oxidara igual en el centro de una pared lisa que en una junta, e incluso se oxidaban los neumáticos. Ahora el óxido se acumula donde lo haría de verdad: en el metro de abajo, en las aristas, donde se pela la pintura, y en los rebajes, donde se queda el agua.</p>
+    <div class="note"><b>Nota técnica</b>Las mallas son hard-surface de pocos polígonos, así que un atributo de cavidad horneado por punto no tendría resolución: una pared es una cara de cuatro vértices. Por eso las máscaras se calculan en el shader, con el nodo de curvatura de Karma, que lanza unos rayos cortos alrededor de cada punto. Su salida convexa da las aristas y la cóncava, los rincones. La altura se mide en el espacio de cada instancia, así que una caravana del quinto piso se oxida desde su propia base. El ruido ya no decide dónde hay óxido: solo rompe el borde de las máscaras. La oclusión ambiental de Karma, que era la opción obvia, no funcionaba en XPU y se descartó.</div>
+    <div class="facts"><span>3 máscaras: base, aristas y rincones</span><span>neumáticos sin óxido</span><span>+27 % de render</span><span>0 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Revisión · bloque 10</span><span>7 nov 2026</span></div>
