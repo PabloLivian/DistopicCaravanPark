@@ -206,6 +206,17 @@
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
 
   <article class="entry">
+    <div class="meta"><span class="phase">Revisión · bloque 7</span><span>7 nov 2026</span></div>
+    <h3>Una rejilla, no dos</h3>
+    <div class="shots">
+      <figure><img src="capturas/rev_b7_rejilla_antes_despues.jpg" alt="Comparación de dos renders nocturnos de la misma zona de pasarelas: a la izquierda la rejilla se ve doble y densa, a la derecha limpia"><figcaption>Antes, la rejilla se veía doble y con moiré; después, una sola capa que deja ver lo de abajo</figcaption></figure>
+    </div>
+    <p>Al revisar el parque con Karma en el viewport aparecía un brillo raro en algunas pasarelas, como un reflejo, y una rejilla que parecía doble. Era las dos cosas a la vez: cada tablero de rejilla tenía la trama en la cara de arriba y también en la de abajo, y a través de una se veía la otra. Además, en un punto había dos tramos de pasarela exactamente superpuestos.</p>
+    <div class="note"><b>Nota técnica</b>La rejilla no es geometría: es opacidad en el material, como una máscara. Eso es muy barato, pero solo funciona en una superficie. Los tableros eran cajas de 3–4 cm con la máscara en las seis caras, así que la cara de abajo asomaba por los huecos de la de arriba con la trama desplazada: un moiré clásico. Ahora el generador deja la rejilla solo en la cara de arriba, convierte los cantos en chapa maciza (la pletina de borde de un tramex real) y borra la de abajo. Lo mismo para los forjados de las torres y los peldaños. El tramo duplicado salía del algoritmo de puentes: unía dos torres vecinas que ya estaban unidas.</div>
+    <div class="facts"><span>3 tipos de tablero corregidos</span><span>0 tramos duplicados</span><span>118/118 puertas accesibles</span></div>
+  </article>
+
+  <article class="entry">
     <div class="meta"><span class="phase">Revisión · bloque 6</span><span>7 nov 2026</span></div>
     <h3>Llega la autocaravana capuchina</h3>
     <div class="shots">
