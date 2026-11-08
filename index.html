@@ -207,6 +207,17 @@
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 8 · ajustes</span><span>8 nov 2026</span></div>
+    <h3>El viewport no veía lo mismo que Karma</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase8_b12_contenedor.jpg" alt="Tres vistas del mismo contenedor: en el viewport con dos parches de chapa, en el viewport ya liso y en el render de Karma, ondulado y oxidado sin parches"><figcaption>El mismo contenedor: viewport antes, viewport después y render final</figcaption></figure>
+    </div>
+    <p>Los contenedores no deben llevar las juntas, remaches ni parches de las caravanas: son de chapa ondulada de una pieza. En el render ya salían limpios, pero en el viewport seguían con parches. Ahora salen igual en los dos.</p>
+    <div class="note"><b>Nota técnica</b>El material reconocía los contenedores por un dato de cada copia, su color de naviera. El render lo lee bien, pero el viewport no lee los datos de cada copia: los toma como cero, y para él todos los contenedores eran caravanas. La marca de «contenedor» se pone ahora en el modelo original, del que salen todas las copias, y ese dato sí lo lee el viewport. Lección para el resto del proyecto: lo que tenga que verse igual en el viewport y en el render va en el modelo, no en la copia.</div>
+    <div class="facts"><span>1 nodo nuevo</span><span>0 polígonos nuevos</span><span>viewport = render</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 8 · ajustes</span><span>8 nov 2026</span></div>
     <h3>Una escalera que no iba a ninguna parte</h3>
     <div class="shots">
       <figure><img src="capturas/fase8_b11_ajustes.jpg" alt="Izquierda: frente de una autocaravana capuchina con un parabrisas ancho y oscuro que refleja el entorno. Derecha: callejón al atardecer con caravanas de chapa más limpia, con pocos parches"><figcaption>Izquierda: el parabrisas ya es una luna de furgoneta. Derecha: menos parches en la chapa</figcaption></figure>
