@@ -184,7 +184,7 @@
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
-    <li class="doing"><span class="n">8</span>Desgaste y detalle fino<span class="st">En curso · óxido y suelo</span></li>
+    <li class="doing"><span class="n">8</span>Desgaste y detalle fino<span class="st">En curso · óxido, suelo y chapa</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 8 · bloque 4</span><span>8 nov 2026</span></div>
+    <h3>Paneles, remaches y parches</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase8_b4_chapa_antes_despues.jpg" alt="Dos recortes del lateral de una autocaravana: a la izquierda una sola superficie lisa con óxido; a la derecha la chapa dividida en paneles verticales, con un parche de chapa gris atornillado"><figcaption>El lateral de la capuchina: antes una sola superficie; después paneles, abolladuras suaves y un parche de chapa</figcaption></figure>
+    </div>
+    <p>Las carrocerías parecían de una sola pieza de plástico. Ahora se leen como lo que son: paneles de chapa unidos por juntas verticales y filas de remaches, con alguna abolladura y, de vez en cuando, un parche de chapa galvanizada atornillado encima de un panel que se rompió.</p>
+    <div class="note"><b>Nota técnica</b>El plan era añadir este detalle a la geometría de los generadores, pero no tenía sentido: las carrocerías son de pocos polígonos y sin subdivisión, y una pared entera es una cara de cuatro vértices. Todo se dibuja en el material, en el espacio local de cada caravana. Las juntas son un módulo sobre el largo de la pieza; los remaches, la distancia a puntos alineados junto a cada junta; los parches, celdas de un ruido celular con su canto. Como la posición se desplaza con un número distinto por copia, dos caravanas iguales no llevan los parches en el mismo sitio. No hay que volver a hornear nada y el render no tarda más.</div>
+    <div class="facts"><span>juntas cada 1,1 m</span><span>≈10 % de paneles parcheados</span><span>0 polígonos nuevos</span><span>0 s de render extra</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 8 · bloque 3</span><span>8 nov 2026</span></div>
