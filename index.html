@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>9</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>336</b><span>Sliders creados</span></div>
+    <div class="stat"><b>337</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -204,6 +204,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 8 · ajustes</span><span>8 nov 2026</span></div>
+    <h3>Una escalera que no iba a ninguna parte</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase8_b11_ajustes.jpg" alt="Izquierda: frente de una autocaravana capuchina con un parabrisas ancho y oscuro que refleja el entorno. Derecha: callejón al atardecer con caravanas de chapa más limpia, con pocos parches"><figcaption>Izquierda: el parabrisas ya es una luna de furgoneta. Derecha: menos parches en la chapa</figcaption></figure>
+    </div>
+    <p>Una revisión con lupa dejó cinco detalles. Una escalera subía a un rellano al que no llegaba ninguna pasarela. Los contenedores tenían parches de chapa. Algunas autocaravanas llevaban las ventanas casi pegadas. El parabrisas parecía una ventana de casa, con cortinas y todo. Y había demasiados parches en general. Ahora cada núcleo de escalera se recorta al último piso que de verdad se usa, los contenedores quedan lisos, entre dos ventanas hay al menos 45 cm de chapa y la luna delantera es ancha, poco hundida, con junta negra y limpiaparabrisas.</p>
+    <div class="note"><b>Nota técnica</b>La escalera se colocaba al principio, con la altura de la torre, y las pasarelas se calculaban después buscando el camino más corto de cada puerta al suelo. Si ningún camino pasaba por el núcleo, la escalera se quedaba ahí igualmente. Lo resuelve un nodo que lee el resultado de esa búsqueda: mira hasta qué piso llega algún camino a cada núcleo y recorta escalera, pilares y barandillas a esa altura. Si no llega ninguno, quita el núcleo entero. El orden de la red no cambia: el grafo sigue usando los núcleos completos, y solo la geometría lee los recortados.</div>
+    <div class="facts"><span>19 → 18 núcleos</span><span>hueco mínimo entre ventanas 0,50 m</span><span>parches del 10 % al 3 %</span><span>+1 slider</span><span>126/126 puertas accesibles</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 8 · bloque 10 · cierre</span><span>8 nov 2026</span></div>
