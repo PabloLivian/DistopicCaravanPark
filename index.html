@@ -184,7 +184,7 @@
     <li class="done"><span class="n">5</span>Equipamiento, clutter y cables<span class="st">Hecha · el parque completo</span></li>
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
-    <li class="doing"><span class="n">8</span>Desgaste y detalle fino<span class="st">En curso · desgaste dirigido</span></li>
+    <li class="doing"><span class="n">8</span>Desgaste y detalle fino<span class="st">En curso · óxido y suelo</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -204,6 +204,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Fase 8 · bloque 3</span><span>8 nov 2026</span></div>
+    <h3>Tierra, grava y charcos</h3>
+    <div class="shots">
+      <figure><img src="capturas/fase8_b3_suelo_antes_despues.jpg" alt="Dos recortes del mismo callejón al atardecer: arriba el suelo es un color liso; abajo tiene grava, tierra más oscura bajo las caravanas y un charco que refleja los pilares"><figcaption>El suelo del callejón antes y después</figcaption></figure>
+      <figure><img src="capturas/fase8_b3_suelo_calle.jpg" alt="Render a pie de calle al atardecer con suelo de tierra y grava y un charco junto a los pilares"><figcaption>A pie de calle: grava, tierra húmeda bajo las torres y un charco</figcaption></figure>
+    </div>
+    <p>El suelo ocupaba un tercio de los planos a pie de calle y era un color liso. Ahora es tierra con grava, más clara y compactada en los callejones por donde se pisa, oscura y manchada de aceite bajo las torres, donde no da el sol y gotea todo, y con algún charco que refleja los pilares y las luces.</p>
+    <div class="note"><b>Nota técnica</b>El trabajo se reparte entre dos sitios. El generador sabe dónde están las torres y las calles, así que el suelo pasa a ser una rejilla de medio metro que guarda tres máscaras: bajo torre, pisado y charco. El material no sabe nada del parque, pero tiene resolución infinita: lee esas máscaras y pone el grano, con piedras de un ruido celular de Worley que dan a cada guijarro su tono y su relieve. El primer intento, con un ruido de celdas cúbicas, parecía un suelo de baldosas.</div>
+    <div class="facts"><span>3 máscaras de suelo</span><span>32.761 puntos</span><span>12 piedras por metro</span><span>0 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 8 · bloques 1 y 2</span><span>7 nov 2026</span></div>
