@@ -167,9 +167,9 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>9</b><span>Fase en curso</span></div>
+    <div class="stat"><b>M1</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>337</b><span>Sliders creados</span></div>
+    <div class="stat"><b>338</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -185,7 +185,8 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">9</span>Visualizador procedural<span class="st">Siguiente</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · fase 1 de 8: luz del anochecer</span></li>
+    <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
 
@@ -204,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M1</span><span>10 nov 2026</span></div>
+    <h3>Revisión general y pilotos apagados</h3>
+    <div class="shots">
+      <figure><img src="capturas/m1_b2_pilotos_antes_despues.jpg" alt="La misma calle al atardecer dos veces: a la izquierda, varias caravanas apiladas con los pilotos traseros encendidos en rojo; a la derecha, los mismos pilotos apagados"><figcaption>Antes y después: los pilotos rojos eran lo más saturado del plano</figcaption></figure>
+      <figure><img src="capturas/m1_b2_plaza_anochecer.jpg" alt="La plaza a ras de suelo al anochecer: la barra de un bar iluminada a la izquierda, puestos al fondo y torres de caravanas con algunas ventanas encendidas"><figcaption>Cámara de control nueva: la plaza a ras de suelo</figcaption></figure>
+    </div>
+    <p>Con el parque terminado tocaba mirarlo como en una revisión de estudio: quince tomas contra las referencias. El generador aguanta; lo que falta es contexto, luz y vida. De ahí sale un plan de ocho fases de mejora, que empieza por la luz del anochecer. El primer cambio es el más pequeño: las caravanas llevan décadas apiladas, así que sus pilotos traseros no tienen por qué estar encendidos. Ahora solo los lleva alguna, como si tuviera un cortocircuito.</p>
+    <div class="note"><b>Nota técnica</b>Las caravanas son instancias y no se puede tocar una sola por dentro. Lo que sí viaja con cada copia son sus atributos: un nodo decide, con la semilla de cada caravana, cuáles llevan los pilotos encendidos y con qué brillo, y el material lee ese valor para la emisión. Va después de la caché del parque, así que mover el slider no recalcula nada. Antes de tocar la luz se auditó el render: un solo rebote difuso, sin pases de profundidad ni de luces y sin desenfoque, que son trabajo de las fases siguientes.</div>
+    <div class="facts"><span>8 fases de mejora</span><span>4 de 84 caravanas con pilotos</span><span>+1 slider</span><span>2 cámaras de control nuevas</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Fase 8 · ajustes</span><span>9 nov 2026</span></div>
