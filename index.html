@@ -167,9 +167,9 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>M1</b><span>Fase en curso</span></div>
+    <div class="stat"><b>M2</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>343</b><span>Sliders creados</span></div>
+    <div class="stat"><b>344</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · fase 1 de 8: luz del anochecer</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 1 de 8 fases hecha (luz del anochecer); siguiente: cielo, atmósfera y cámara</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M1</span><span>10 nov 2026</span></div>
+    <h3>140 luces en presupuesto</h3>
+    <div class="shots">
+      <figure><img src="capturas/m1_b6_dron_anochecer.jpg" alt="Vista de dron del parque al anochecer: charcos de luz cálida en el suelo, puntos blancos en las escaleras, balizas rojas en lo alto de las torres, la ciudad iluminada a la izquierda y una montaña al fondo"><figcaption>Cierre de la fase: la luz del anochecer completa, en 65 segundos por fotograma</figcaption></figure>
+      <figure><img src="capturas/m1_b6_arreglos_antes_despues.jpg" alt="Cuatro imágenes: arriba, la barra de un bar con una mancha quemada en la pared y la misma barra sin ella; abajo, la puerta de una caseta con la luz concentrada junto a la bombilla y la misma puerta con la luz bajando hasta el escalón"><figcaption>Arreglos: la pared del bar ya no se quema y la luz de la puerta llega al escalón</figcaption></figure>
+    </div>
+    <p>Con todas las luces puestas (ventanas, puestos, puertas, escaleras, farolas y balizas, 140 en total) algunos planos pasaban de los dos minutos y medio por fotograma que caben en una noche de render. Este bloque las mete en presupuesto y corrige tres sitios donde una bombilla demasiado cerca de una superficie la quemaba en blanco. Con él se cierra la primera fase de mejoras: el anochecer ya tiene vida a pie de calle.</p>
+    <div class="note"><b>Nota técnica</b>Antes de recortar luces se midió qué cuesta de verdad. Dejar que la luz rebote dos veces en vez de una alargaba el render un 35 % y la imagen solo ganaba un 1–2 % de luz: no compensa. Bajar las muestras por píxel de 215 a 128 lo acorta un 35 %, y tras el denoiser no se distingue en una imagen fija. Queda por comprobar en animación, donde menos muestras pueden hacer parpadear el denoiser. El truco de las bombillas: la luz real no tiene por qué estar donde está la bombilla que se ve. La de los puestos se mete 40 cm hacia dentro y alumbra la barra sin quemar el frontal; la de las puertas se separa 35 cm de la chapa.</div>
+    <div class="facts"><span>140 luces reales</span><span>65–130 s por fotograma</span><span>−35 % de tiempo</span><span>+1 slider</span><span>Fase M1 terminada</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M1</span><span>10 nov 2026</span></div>
