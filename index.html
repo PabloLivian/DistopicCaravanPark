@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M1</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>339</b><span>Sliders creados</span></div>
+    <div class="stat"><b>341</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M1</span><span>10 nov 2026</span></div>
+    <h3>Escaleras con luz y farolas de sodio</h3>
+    <div class="shots">
+      <figure><img src="capturas/m1_b4_nucleo_antes_despues.jpg" alt="El borde de la plaza al anochecer desde unos ocho metros de altura, dos veces: a la izquierda, el suelo a oscuras; a la derecha, una farola baña el suelo y su poste de luz naranja y una bombilla blanca ilumina una caravana junto a una escalera de mano"><figcaption>Antes y después: la farola hace un charco naranja en la plaza y la luz de trabajo marca la escalera</figcaption></figure>
+      <figure><img src="capturas/m1_b4_dron_anochecer.jpg" alt="Vista de dron del parque al anochecer: charcos de luz cálida en el suelo entre las torres, puntos de luz blanca en las escaleras y la ciudad y una montaña al fondo"><figcaption>Desde el dron: charcos cálidos abajo y puntos fríos subiendo por las torres</figcaption></figure>
+    </div>
+    <p>Dos luces más para el anochecer, de dos temperaturas. En las torres de escalera, una luz de trabajo blanca por piso, sujeta a uno de los pilares: marcan la subida y dibujan la altura de cada torre con una hilera de puntos fríos. Y en el suelo, las farolas de los postes que ya tenían lámpara modelada: luz de sodio, naranja, que por fin deja charcos de luz en la plaza y en los callejones. No todas funcionan: tres de las nueve están rotas, con la lente apagada.</p>
+    <div class="note"><b>Nota técnica</b>El generador sabe dónde está cada rellano, pero el render no lee el generador: lee una copia congelada del parque. En vez de abrir una puerta trasera, las luces se deducen de lo que hay en esa copia. Los cuatro pilares de cada torre de escalera bastan: su altura dice cuántos pisos tiene, su media da el centro, y la escalera en zigzag toca cada piso en un extremo alterno, así que la bombilla va en el pilar de ese extremo. En el último piso el pilar se acaba a la altura de la barandilla y la bombilla va encima. Las farolas rotas tenían truco: la lente es parte de un poste instanciado, y se apaga con un atributo por copia que el material lee como «apagada», no como «encendida», para que todo lo que no lo lleva siga encendido.</div>
+    <div class="facts"><span>58 bombillas de escalera</span><span>6 farolas de 9</span><span>132 luces en total</span><span>+2 sliders</span><span>+10 % de render</span><span>0 cambios en el generador</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M1</span><span>10 nov 2026</span></div>
