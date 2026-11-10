@@ -206,6 +206,19 @@
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
 
+  <article class="entry">
+    <div class="meta"><span class="phase">Herramienta · panel de control</span><span>10 nov 2026</span></div>
+    <h3>Un panel para dirigir toda la escena</h3>
+    <div class="shots">
+      <figure><img src="capturas/panel_control_luz.png" alt="Panel oscuro de estilo técnico dentro de Houdini: arriba, una barra de estado con el archivo abierto, el motor del visor, la cámara, el ambiente y el cielo; a la izquierda, nueve pestañas; en la página de luz, el selector atardecer o anochecer, cinco grupos de luces con su interruptor, su exposición y su color, y los sliders de las luces de la noche"><figcaption>Página de luz: ambiente, cada grupo de luces con su interruptor, exposición y color</figcaption></figure>
+      <figure><img src="capturas/panel_control_parque.png" alt="La página del parque del mismo panel: un aviso de que el render lee el parque congelado, una fila de controles rápidos con el modo de vista y los presets, y la sección de apilado abierta con quince sliders"><figcaption>Página del parque: todos los sliders del generador, leídos de su interfaz</figcaption></figure>
+      <figure><img src="capturas/panel_assets_pieza.png" alt="Visor de Houdini con una autocaravana capuchina sola, sin texturas, y una figura humana de 1,8 metros delante para dar la escala"><figcaption>Visor de assets: una pieza de la biblioteca con la figura de 1,8 m</figcaption></figure>
+    </div>
+    <p>Con cientos de controles repartidos por la escena (sliders del parque, generadores, luces, cielos, cámaras y opciones de render), encontrar el que hace falta era lo más lento del día a día. Ahora hay un panel propio dentro de Houdini que lo reúne todo en nueve páginas: saltar entre los catorce planos, cambiar el visor entre la vista rápida y el render real de Karma, encender y apagar cada grupo de luces, elegir el cielo, lanzar renders, mover cualquier slider del parque o de sus generadores y revisar los lotes de caravanas y piezas de la biblioteca a escala humana. Una barra arriba dice en todo momento cómo está la escena, y cada dato de la barra es también un atajo.</p>
+    <div class="note"><b>Nota técnica</b>El panel no tiene la lista de sliders escrita: la lee de la interfaz del propio generador cada vez que se abre, así que un slider nuevo aparece solo. Lo mismo con las cámaras, los generadores, los cielos de la carpeta y los nodos marcados en rojo como puntos de control; lo demás se añade en un único archivo de registro. Se sincroniza en los dos sentidos (lo que se toca en Houdini se ve en el panel) y cuida los detalles de una herramienta de estudio: arrastrar un slider se deshace de una vez, aunque la escena se actualice durante el arrastre, y lanza los scripts que Houdini solo ejecuta desde su propia interfaz, como el que aplica el preset de cada tipo de caravana. Lo caro (renders, cachés, horneados) siempre pide confirmación.</div>
+    <div class="facts"><span>9 páginas</span><span>14 cámaras a un clic</span><span>~350 controles</span><span>Sliders nuevos: sin tocar el panel</span><span>1 deshacer por gesto</span></div>
+  </article>
+
 <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M1</span><span>10 nov 2026</span></div>
     <h3>140 luces en presupuesto</h3>
