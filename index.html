@@ -219,7 +219,40 @@
     <div class="facts"><span>9 páginas</span><span>14 cámaras a un clic</span><span>~350 controles</span><span>Sliders nuevos: sin tocar el panel</span><span>1 deshacer por gesto</span></div>
   </article>
 
-<article class="entry">
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M2</span><span>10 nov 2026</span></div>
+    <h3>Aire entre el parque y la ciudad</h3>
+    <div class="shots">
+      <figure><img src="capturas/m2_b3_atmosfera.jpg" alt="Seis paneles en tres parejas: el parque desde el dron al atardecer y al anochecer, sin bruma y con una bruma suave que hace retroceder la ciudad y la montaña; y una calle del parque sin niebla y con niebla, donde la farola dibuja un cono de luz"><figcaption>Planos generales: bruma añadida en composición. Calle: niebla real en el render</figcaption></figure>
+    </div>
+    <p>A varios kilómetros, el aire nunca está limpio: lo lejano pierde contraste y toma el color del cielo. Es lo que da sensación de distancia, y el parque no lo tenía. Se han probado dos caminos. Para los planos de dron, una bruma que se añade después del render usando la profundidad de cada píxel: no cuesta tiempo de render y se ajusta en segundos. A pie de calle, la niebla de verdad del motor de render, que hace visibles los conos de luz de las farolas.</p>
+    <div class="note"><b>Nota técnica</b>La bruma de composición usa la misma ley que la niebla real: la luz que atraviesa un tramo de aire cae de forma exponencial con la distancia. Si se aplica tal cual, la montaña y la ciudad, que están a kilómetros, desaparecen del todo, así que se limita su opacidad máxima para que el fondo se siga leyendo. Al medir costes saltó otra cosa: las capas de composición del bloque anterior se calculaban siempre, también en los renders de prueba, y los encarecían un 50 %. Ahora se encienden solo cuando se renderiza para composición.</div>
+    <div class="facts"><span>Bruma en comp: ~0 s</span><span>Niebla real: ×2,4 en el dron, +15 % en calle</span><span>−50 % en los renders de prueba</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M2</span><span>10 nov 2026</span></div>
+    <h3>La imagen, separada en capas</h3>
+    <div class="shots">
+      <figure><img src="capturas/m2_b2_aovs.jpg" alt="Seis paneles del mismo plano de dron al anochecer: la imagen final, la luz que aporta el cielo, la de las 140 luces del parque, la de las superficies emisivas como ventanas y bombillas, y un mapa de profundidad en grises"><figcaption>La imagen final y sus capas: cielo, luces del parque, emisión y profundidad</figcaption></figure>
+    </div>
+    <p>Hasta ahora el render salía como una sola imagen cerrada: para cambiar algo había que volver a renderizar. Ahora cada fotograma sale en un archivo de capas, al estilo de un estudio. La luz va separada por su origen (el sol, el cielo, las luces del parque y lo que brilla por sí mismo, como ventanas y bombillas), y además hay un mapa de profundidad y máscaras para aislar cualquier material o pieza. En composición se podrá subir el cielo, bajar las farolas o añadir bruma sin tocar Houdini.</p>
+    <div class="note"><b>Nota técnica</b>Cada luz lleva una etiqueta de grupo, y el render guarda por separado la luz que llega por cada grupo, siguiendo el camino de cada rayo hasta la luz de la que sale. Si está bien hecho, las capas suman la imagen final: aquí lo hacen con una diferencia media de menos de una milésima en el rango visible. El detalle que casi se escapa: el filtro que quita el ruido solo se aplicaba a la imagen final, y las capas salían con grano; hay que pedirle que limpie también cada capa. Las máscaras de las caravanas son por modelo y no por copia: todas las copias de una pieza comparten máscara.</div>
+    <div class="facts"><span>13 capas por fotograma</span><span>4 grupos de luz</span><span>32 materiales con máscara</span><span>74 s, igual que antes</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M2</span><span>10 nov 2026</span></div>
+    <h3>Cielos de verdad</h3>
+    <div class="shots">
+      <figure><img src="capturas/m2_b1_cielos_antes_despues.jpg" alt="Cuatro imágenes del parque desde el dron: arriba, el atardecer con un cielo degradado limpio y con un cielo de nubes pesadas iluminadas por un sol rasante; abajo, el anochecer con un cielo azul claro y con un azul profundo en el que las luces cálidas destacan más"><figcaption>Izquierda, el cielo calculado; derecha, cielos fotografiados</figcaption></figure>
+    </div>
+    <p>El cielo era un degradado limpio, sin una nube: lo primero que delataba que todo era 3D. Ahora son cielos fotografiados en alto rango dinámico: un atardecer de nubes pesadas con el sol rasante para la luz cálida y una hora azul casi de noche para el anochecer. Además de verse de fondo, iluminan el parque con su propia luz.</p>
+    <div class="note"><b>Nota técnica</b>Estos cielos están calibrados como una cámara real: el de noche da cien veces menos luz que el de la tarde. Cada uno se ajusta con su propia exposición, igualando la luz que recibe el parque con la del cielo anterior. El sol de la foto está a solo un grado sobre el horizonte y tapado por nubes, así que casi no entraba en el parque: se añade un sol aparte, alineado con el de la foto pero un poco más alto. Para orientarlos hubo que averiguar por prueba hacia dónde mira el centro de la imagen y girar la cúpula 90° para que el sol caiga al oeste, como antes.</div>
+    <div class="facts"><span>2 cielos HDRI de 16K</span><span>77–78 s por fotograma</span><span>1 sol alineado</span><span>Cielo anterior a un clic</span></div>
+  </article>
+
+  <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M1</span><span>10 nov 2026</span></div>
     <h3>140 luces en presupuesto</h3>
     <div class="shots">
