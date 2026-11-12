@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>M2</b><span>Fase en curso</span></div>
+    <div class="stat"><b>M3</b><span>Fase siguiente</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>344</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · fase 2 de 8: cielo, atmósfera y cámara</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 2 de 8 hechas; siguiente, contexto y entorno</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M2</span><span>12 nov 2026</span></div>
+    <h3>El look de la película</h3>
+    <div class="shots">
+      <figure><img src="capturas/m2_b5_look_antes_despues.jpg" alt="Cuatro parejas de imágenes, a la izquierda sin etalonar y a la derecha con el look: el parque desde el dron al atardecer, una calle bajo las escaleras al atardecer, el parque desde el dron al anochecer y la barra de un bar en la plaza al anochecer. Con el look hay más contraste, sombras más frías y limpias, luces cálidas más separadas y los bordes del encuadre algo más oscuros"><figcaption>Sin look y con look: dron y calle de cada ambiente</figcaption></figure>
+    </div>
+    <p>Se cierra la segunda fase de mejoras con el etalonaje de referencia, hecho en DaVinci Resolve como en una productora. Los renders salen de Houdini en alto rango dinámico y Resolve los pasa a imagen de vídeo con una curva que redondea las luces fuertes en vez de cortarlas. Encima va el look: más contraste, sombras hacia el azul, luces hacia el ámbar, un halo suave en las bombillas, una viñeta casi invisible y grano fino. El mismo etalonaje vale para los dos ambientes y para planos de dron y de calle, y queda guardado para la cinemática.</p>
+    <div class="note"><b>Nota técnica</b>Resolve se ha controlado desde fuera, por su API de scripting: crear el proyecto, configurar el color, importar los planos, aplicar el look y renderizar fotogramas de prueba para medirlos. La API no puede crear nodos de etalonaje, así que el trabajo se repartió: el color (una corrección por plano y una LUT creativa calculada a medida) va por script, y los efectos se pusieron a mano. Cada ajuste se comprobó con números, no a ojo: la viñeta, en pasos de luz por zonas del encuadre, y el grano, como textura fina sobre un cielo liso. Así salió que una primera viñeta oscurecía seis pasos las esquinas. La LUT sube el contraste sobre la luminancia, sumando lo mismo a los tres canales en escala logarítmica, que equivale a multiplicar la luz sin cambiar su color.</div>
+    <div class="facts"><span>4 planos de referencia</span><span>1 LUT creativa propia</span><span>3 efectos de lente</span><span>4 fotogramas en 3 s</span><span>Fase M2 terminada</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M2</span><span>12 nov 2026</span></div>
