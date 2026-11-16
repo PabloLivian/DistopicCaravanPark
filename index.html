@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>M3</b><span>Fase siguiente</span></div>
+    <div class="stat"><b>M3</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>354</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -205,6 +205,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M3</span><span>16 nov 2026</span></div>
+    <h3>Un fondo nuevo, primero en cajas</h3>
+    <div class="shots">
+      <figure><img src="capturas/m3_b1_blockout.jpg" alt="Cuatro imágenes: el concepto del fondo, con el parque de caravanas en alto sobre un valle con un lago, colinas, una ciudad lejana, una montaña con antena y una fortaleza a la derecha; y tres renders del mismo plano hecho con formas simples, al atardecer con el sol reflejado en el lago, al anochecer y desde otro dron mirando al este"><figcaption>El concepto y su blockout: atardecer, anochecer y la vista del dron este</figcaption></figure>
+    </div>
+    <p>El fondo de rascacielos no acababa de funcionar, así que se rediseñó desde un concepto: el parque en alto sobre un valle con un lago, colinas en capas, una ciudad pequeña y lejana, una montaña con una torre antena, una fortaleza unida a la ciudad por una carretera, una torre de agua junto al parque y un cercado alrededor. Antes de detallar nada se ha montado todo con cajas y cilindros en su sitio, en 3D de verdad, y se ha girado el cielo para que el sol se ponga sobre el lago. Así se decide la composición cuando mover una montaña todavía cuesta un segundo.</p>
+    <div class="note"><b>Nota técnica</b>Todo el relieve sale de una sola función de altura: una meseta con el borde roto por ruido, un valle, la cubeta del lago y del río, colinas en tres escalas que crecen con la distancia y una montaña. Se evalúa en dos rejillas, una fina cerca y otra gruesa hasta 8 km, y la costura entre ambas no se abre porque los puntos finos del borde toman la altura interpolada entre los nodos de la gruesa. Las piezas no llevan altura escrita a mano: cada una lanza un rayo hacia abajo y se apoya donde toca el terreno, así que al mover un slider del relieve el viaducto recalcula sus pilas y la antena busca sola la cumbre. El fondo anterior sigue en la escena, detrás de un conmutador.</div>
+    <div class="facts"><span>1 función de altura</span><span>16 km de terreno</span><span>432 piezas de blockout</span><span>15 sliders nuevos</span><span>Cielo girado 66°</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M3</span><span>13 nov 2026</span></div>
