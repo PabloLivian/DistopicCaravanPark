@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M3</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>354</b><span>Sliders creados</span></div>
+    <div class="stat"><b>361</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M3</span><span>17 nov 2026</span></div>
+    <h3>Un lago con viento y niebla en los valles</h3>
+    <div class="shots">
+      <figure><img src="capturas/m3_b3_lago_antes_despues.jpg" alt="Dos recortes del lago al atardecer: antes, un espejo liso; después, el reflejo del sol roto por rachas de viento y una orilla oscura de tierra mojada"><figcaption>El lago: de espejo liso a agua con rachas de viento y orilla mojada</figcaption></figure>
+      <figure><img src="capturas/m3_b3_niebla.jpg" alt="Tres franjas del mismo plano de dron: sin niebla; al atardecer, con niebla cálida asentada al pie de la ciudad y de la montaña; y al anochecer, con un velo frío que apenas se ve"><figcaption>Sin niebla, atardecer y anochecer</figcaption></figure>
+    </div>
+    <p>El lago ha dejado de ser un espejo. El viento lo pule a manchas: unas zonas reflejan el cielo limpio y otras lo rompen en ondas, y la orilla se oscurece en una franja de tierra mojada. En los fondos del valle se asienta una niebla baja que se queda al pie de la ciudad y de la montaña, deja limpio el lago cercano y cambia con la hora: teñida de sol al atardecer y un velo frío al anochecer.</p>
+    <div class="note"><b>Nota técnica</b>La niebla no es un volumen sino seis capas de malla semitransparentes, y casi no cuesta render. El truco está en dónde se colocan: unas capas horizontales solo cubrían el 1,7 % de la imagen, porque el terreno sube enseguida. Así que cada capa sigue el relieve suavizado, la media del suelo en un anillo de 300 m, y se hunde unos metros bajo él. En los fondos de valle queda por encima del suelo y se ve; en las lomas queda enterrada y desaparece sola. La opacidad crece con la altura sobre el suelo, así que no se marcan líneas duras contra las laderas, y un ruido estirado la rompe en jirones. Por encima de 110 m se apaga para que no suba por los barrancos de la montaña y parezca nieve.</div>
+    <div class="facts"><span>6 capas de niebla</span><span>31.000 caras</span><span>7 sliders nuevos</span><span>Coste de render: +1 s</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M3</span><span>16 nov 2026</span></div>
