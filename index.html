@@ -208,6 +208,18 @@
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M3</span><span>16 nov 2026</span></div>
+    <h3>Terreno erosionado en tres resoluciones</h3>
+    <div class="shots">
+      <figure><img src="capturas/m3_b2_terreno.jpg" alt="Dos franjas del mismo plano de dron al atardecer: arriba, colinas lisas de un solo color; abajo, la sierra y la montaña con crestas y barrancos, roca oscura en las pendientes y nieve en la cumbre bajo la antena"><figcaption>Del relieve liso a la erosión: crestas, barrancos, roca y nieve</figcaption></figure>
+      <figure><img src="capturas/m3_b2_laderas.jpg" alt="Cuatro vistas del parque al atardecer: desde el dron norte antes y después, y desde arriba, donde el borde de la meseta deja de ser un terraplén recto y forma salientes y escarpes"><figcaption>El borde de la meseta: salientes y escarpes en vez de un terraplén</figcaption></figure>
+    </div>
+    <p>El relieve del blockout se ha convertido en terreno de verdad. Una simulación de erosión hace correr agua por las laderas, abre barrancos y deja sedimento en los fondos de valle; con esas mismas huellas se colorea el suelo: roca oscura en las pendientes, sedimento claro donde se depositó, cauces más oscuros y nieve en la cumbre. Junto al parque, el borde de la meseta deja de ser un terraplén recto y se rompe en salientes y escarpes.</p>
+    <div class="note"><b>Nota técnica</b>El terreno mide 16 km, pero solo necesita detalle donde la cámara lo ve de cerca. Se calcula en tres resoluciones: 2,5 m alrededor del parque, 10 m hasta 1,5 km y 20 m hasta el horizonte, y en cada frontera los puntos de la malla fina toman la altura de la gruesa, así que no se abre ninguna grieta. La erosión a 2,5 m resultó mucho más agresiva que a 10 m: en 30 pasos se comía los salientes enteros, así que allí solo se dan 10 y lo alto se protege. De paso salió un cuello de botella que no era del terreno: todos los nodos del render copiaban la geometría importada; abrir una capa nueva justo después bajó de 49 a 7 segundos el tiempo en ver cualquier cambio.</div>
+    <div class="facts"><span>3 resoluciones cosidas</span><span>851.100 caras</span><span>Erosión: 10 s a 10 m</span><span>Render: 83 s</span><span>Actualización: 49 → 7 s</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M3</span><span>16 nov 2026</span></div>
     <h3>Un fondo nuevo, primero en cajas</h3>
     <div class="shots">
       <figure><img src="capturas/m3_b1_blockout.jpg" alt="Cuatro imágenes: el concepto del fondo, con el parque de caravanas en alto sobre un valle con un lago, colinas, una ciudad lejana, una montaña con antena y una fortaleza a la derecha; y tres renders del mismo plano hecho con formas simples, al atardecer con el sol reflejado en el lago, al anochecer y desde otro dron mirando al este"><figcaption>El concepto y su blockout: atardecer, anochecer y la vista del dron este</figcaption></figure>
