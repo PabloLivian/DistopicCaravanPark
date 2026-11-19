@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M3</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>466</b><span>Sliders creados</span></div>
+    <div class="stat"><b>509</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M3</span><span>18 nov 2026</span></div>
+    <h3>La ciudad futurista del concepto de noche</h3>
+    <div class="shots">
+      <figure><img src="capturas/m3_b9_concepto_vs_render.jpg" alt="Arriba, el concepto de noche generado sobre nuestro plano de dron: el parque de caravanas en primer plano, el lago, y al fondo una ciudad futurista con una megatorre gótica bajo un cielo azul marino con un hilo naranja en el horizonte. Abajo, nuestro render del mismo encuadre: el mismo cielo, el lago con el reflejo naranja, el valle con la carretera y la ciudad con su megatorre, sus coronas de colores y sus luces"><figcaption>El concepto de noche y nuestro render, en el mismo encuadre</figcaption></figure>
+      <figure><img src="capturas/m3_b9_ciudad_antes_despues.jpg" alt="Dos franjas del skyline. Arriba, la ciudad de antes: cajas negras cubiertas de puntos de luz de un píxel bajo un cielo claro. Abajo, la ciudad de ahora: la megatorre de varias hojas con su aguja y su luz en la punta, torres con coronas cian y magenta, un portal de neón naranja, balizas rojas y una ciudad baja azul marino con manchas de luz cálidas, frías y rosadas sobre un cielo de noche con un hilo naranja"><figcaption>Antes, cajas con ventanas de un píxel; ahora, torres trazadas y luz por tramos</figcaption></figure>
+      <figure><img src="capturas/m3_b9_noche_final.jpg" alt="Plano de dron de noche con el look final: el parque iluminado por farolas y ventanas, la torre de agua junto al lago, la fortaleza a la derecha con el viaducto y, al fondo, la ciudad futurista y la montaña con la antena bajo un cielo azul marino"><figcaption>El plano de dron de noche, con el look de Resolve</figcaption></figure>
+    </div>
+    <p>Sobre nuestro propio plano de dron se generó con IA el fondo de noche que se buscaba: una ciudad futurista con una megatorre gótica, bajo un cielo azul marino con un hilo naranja. En lugar de pintarlo encima, se reconstruyó en 3D desde la cámara. El lago, las colinas y las dieciocho torres del skyline se trazaron sobre el concepto y caen en sus mismos píxeles. La megatorre se midió fila a fila y se rehízo en seis hojas con su aguja, y cada torre tomó un estilo de la hoja de diseño de la ciudad, con las luces del concepto: coronas, franjas, un portal de neón y balizas. Después vino la luz: un cielo de noche propio, bruma azul entre las capas del paisaje, luna, luz de la ciudad por tramos de fachada, un velo de contaminación lumínica y la franja de luces de la orilla.</p>
+    <div class="note"><b>Nota técnica</b>Cada torre va en un plano vertical perpendicular a la mirada de la cámara y se recorta con los rayos que salen de los bordes de sus píxeles, así que cae exactamente donde está en el concepto (con menos de una décima de píxel de error) y la distancia solo cambia su tamaño en metros. A 2,75 km un píxel son 2 metros: el detalle no se juega en la geometría sino en la luz. Las ventanas sueltas daban confeti y se cambiaron por tramos que se encienden juntos, con una cola de focos muy brillantes que son los que abren halo. El cielo se ajustó midiendo el concepto: sus colores se pasaron a valores de escena con una inversa numérica de la transformada de vista y se metieron en dos rampas por altura, la del oeste con el naranja y la del este marina, sobre una esfera que solo ven la cámara y los reflejos.</div>
+    <div class="facts"><span>18 torres trazadas</span><span>Megatorre de 6 hojas</span><span>162 luces trazadas</span><span>Cielo medido en el concepto</span><span>43 sliders nuevos</span><span>Error de calco &lt; 0,1 px</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M3</span><span>17 nov 2026</span></div>
