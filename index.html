@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M3</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>509</b><span>Sliders creados</span></div>
+    <div class="stat"><b>550</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,30 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M3</span><span>20 nov 2026</span></div>
+    <h3>Un lago con olas y zonas de viento</h3>
+    <div class="shots">
+      <figure><img src="capturas/m3_b10_lago_cmp.jpg" alt="Cinco franjas del lago: el concepto de noche con largos reflejos de colores de la ciudad; nuestro lago plano de noche, como un espejo sin vida; el lago con olas de noche, con los reflejos de las luces en columnas rotas y el resplandor naranja reflejado en las zonas en calma; el lago plano al atardecer con el reflejo del sol como una mancha lisa; y el lago con olas al atardecer, con el reflejo del sol roto en una columna de destellos"><figcaption>Concepto, lago plano y lago con olas, de noche y al atardecer</figcaption></figure>
+      <figure><img src="capturas/m3_b10_lago_planos.jpg" alt="El plano de dron al atardecer y de noche con el lago con olas: el sol se refleja en una columna de destellos y, de noche, el lago recoge las luces de la ciudad"><figcaption>El plano de dron al atardecer y de noche</figcaption></figure>
+    </div>
+    <p>El lago era una lámina plana: de cerca y de lejos, un espejo sin vida. Ahora tiene olas de verdad, generadas con un espectro de océano pensado para agua poco profunda y con poco recorrido de viento (un lago de 3 km), que se mueven solas con el tiempo para la cinemática. No todo el lago está igual de picado: hay zonas de calma, que hacen de espejo, y zonas de viento, que rompen los reflejos. Al atardecer el sol deja una columna de destellos y de noche las luces de la ciudad caen en columnas rotas por las olas.</p>
+    <div class="note"><b>Nota técnica</b>Una rejilla uniforme del tamaño del lago necesitaría millones de polígonos para tener un metro de detalle cerca. En su lugar, la malla es un abanico de anillos centrado en la cámara y espaciado en 1/r, igual que las filas de la pantalla: un metro a 600 m y cuarenta al fondo, unos 470.000 puntos solo sobre el agua. Donde la malla ya no puede llevar las olas, su altura se apaga y su pendiente pasa a la rugosidad del material, que es lo que estira los reflejos en columnas a ras de agua. El mapa de zonas de viento sale de la geometría y llega al material como un atributo, así que la rugosidad sube y baja en los mismos sitios que las olas. El agua va en una salida aparte del resto del fondo: avanzar un fotograma solo recalcula el lago (0,1 s).</div>
+    <div class="facts"><span>470.000 puntos de agua</span><span>Espectro TMA animado</span><span>Zonas de calma y de viento</span><span>0,1 s por fotograma</span><span>15 sliders nuevos</span></div>
+  </article>
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M3</span><span>19 nov 2026</span></div>
+    <h3>La ciudad también como matte painting</h3>
+    <div class="shots">
+      <figure><img src="capturas/m3_mp_noche.jpg" alt="Cuatro franjas de la ciudad de noche: el concepto; la ciudad 3D; el matte painting con la ciudad, la montaña y las colinas del concepto; y el matte painting solo con la ciudad, sobre nuestra montaña con su antena y nuestro terreno"><figcaption>De noche: concepto, ciudad 3D y los dos matte paintings</figcaption></figure>
+      <figure><img src="capturas/m3_mp_horas.jpg" alt="Cuatro franjas: la ciudad 3D al atardecer, en silueta a contraluz; el matte solo con la ciudad con la imagen de atardecer, con luces cálidas; con la imagen de día, azulada y clara; y con la imagen de noche, de noche"><figcaption>El matte de solo la ciudad con su imagen de atardecer, de día y de noche</figcaption></figure>
+    </div>
+    <p>Como prueba, la ciudad del fondo se puede sustituir por imágenes generadas con IA a partir del concepto: una con la ciudad, la montaña y las colinas, y otra solo con la ciudad, de noche, al atardecer y de día. En el panel hay un desplegable para elegir entre la ciudad 3D y los dos matte paintings, y la imagen de la ciudad sola sigue al ambiente. Como se proyectan desde la cámara del dron, cada imagen cae exactamente donde la puso el concepto, y de regalo el lago refleja la ciudad.</p>
+    <div class="note"><b>Nota técnica</b>La tarjeta no es un plano: cada vértice va sobre el rayo de cámara de su píxel, justo delante del terreno, así que desde la cámara la imagen cae en su sitio y el terreno cercano y la fortaleza siguen tapándola. Los PNG necesitaron tratamiento: el «cielo» del recorte no era transparente, los bordes traían una banda de cielo que el recorte dejó como opaca (se reparte por color entre el edificio y el cielo) y el borde suave, pensado para fundirse en pantalla, brillaba de más al fundirse en lineal (se invierte la vista del color ya premultiplicado). Las imágenes de atardecer y de día venían con otro encuadre y se ajustaron a la silueta de la de noche, para que las tres compartan registro.</div>
+    <div class="facts"><span>3 maneras de ciudad</span><span>4 imágenes tratadas</span><span>Registro &lt; 1 px</span><span>Tratamiento por imagen</span><span>26 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M3</span><span>18 nov 2026</span></div>
