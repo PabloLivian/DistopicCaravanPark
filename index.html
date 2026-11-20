@@ -167,9 +167,9 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>M4</b><span>Siguiente fase</span></div>
+    <div class="stat"><b>M4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>550</b><span>Sliders creados</span></div>
+    <div class="stat"><b>584</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 3 de 8 hechas; siguiente, shading v2</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 3 de 8 hechas; M4 (shading v2) en marcha</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>20 nov 2026</span></div>
+    <h3>Rótulos, pintadas y carteles</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b11_rotulo.jpg" alt="A la izquierda, el concepto: un contenedor azul oxidado con RACCOON INDUSTRIES pintado en blanco en dos líneas. A la derecha, un contenedor mostaza del parque, en sombra, con el mismo rótulo en blanco, gastado por los desconchones y por rayas verticales"><figcaption>El rótulo del concepto y el del parque, gastado por los mismos desconchones que la chapa</figcaption></figure>
+      <figure><img src="capturas/m4_b11_tags.jpg" alt="A la izquierda, el concepto: una caravana blanca con KOPI pintado con espray negro y chorretones. A la derecha, una autocaravana del parque con el mismo tag cruzando la puerta y la carrocería"><figcaption>El tag del concepto y el mismo tag en una autocaravana del parque</figcaption></figure>
+      <figure><img src="capturas/m4_b11_carteles_dos.jpg" alt="Dos primeros planos de carteles de papel pegados en caravanas: a la izquierda, un perro blanco y rojo con VOTE FOR PRESIDENT sobre una chapa blanca oxidada; a la derecha, un pastor con la lengua fuera sobre una chapa marrón cruzada por la luz del atardecer. Los dos tienen los bordes rasgados, con el papel blanco a la vista, y están un poco girados"><figcaption>Dos carteles de la carpeta, con el papel rasgado en los bordes</figcaption></figure>
+    </div>
+    <p>El parque tenía la chapa gastada pero muda. Ahora una parte de los contenedores lleva pintado RACCOON INDUSTRIES, algunas caravanas tienen un tag hecho con espray y hay carteles de papel pegados junto a las puertas. Las pintadas y los carteles salen de dos carpetas: basta con dejar una imagen nueva y pulsar un botón del panel para que entre en el sorteo. Los carteles están envejecidos con moderación: bordes rasgados con el papel blanco a la vista, marcas de haberlos doblado, arrugas y el color quemado por el sol.</p>
+    <div class="note"><b>Nota técnica</b>Las caravanas no tienen UVs, así que el rótulo y los tags se proyectan desde el material: la posición de cada punto dentro de su pieza del pool hace de coordenada de imagen. El costado se decide por el signo de esa posición y no por la normal, porque con la normal el texto salía en espejo. Los carteles, en cambio, son láminas reales para que nunca tapen una ventana. Los sitios se buscan una sola vez en las 52 piezas del pool, probando la lámina entera contra sus paredes, ventanas y marcos, y después se copian a las casi 200 unidades del parque por el nombre de la pieza.</div>
+    <div class="facts"><span>40 % de contenedores con rótulo</span><span>10 % de caravanas con tag</span><span>36 carteles</span><span>2 carpetas con su atlas</span><span>Sin coste de render medible</span><span>28 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M3</span><span>20 nov 2026</span></div>
