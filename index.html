@@ -167,7 +167,7 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>M3</b><span>Fase en curso</span></div>
+    <div class="stat"><b>M4</b><span>Siguiente fase</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
     <div class="stat"><b>550</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 2 de 8 hechas; en marcha, contexto y entorno</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 3 de 8 hechas; siguiente, shading v2</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M3</span><span>20 nov 2026</span></div>
+    <h3>Cierre del entorno: luz de sodio y planos de control</h3>
+    <div class="shots">
+      <figure><img src="capturas/m3_b8_control_look.jpg" alt="Cuatro fotogramas con el etalonaje final: el dron norte y el dron este al atardecer, con el sol bajo, el lago y la ciudad en silueta; y los mismos dos planos de noche, con charcos de luz ámbar alrededor del parque, la ciudad encendida y el horizonte naranja"><figcaption>Los planos de control de los dos drones, al atardecer y de noche, con el look</figcaption></figure>
+      <figure><img src="capturas/m3_b8_luces_calidas.jpg" alt="Tres franjas del parque de noche: el concepto, con charcos de luz ámbar; el render de antes, con un anillo de charcos blancos de los focos del cercado; y el de ahora, con los focos y las farolas en ámbar de sodio"><figcaption>Concepto, focos LED blancos y focos de sodio</figcaption></figure>
+    </div>
+    <p>Se cierra la tercera fase de mejoras, la del entorno. El último ajuste fue de color: en el concepto, los focos del cercado y las farolas dan una luz ámbar de sodio, y en el render los focos eran LED blancos que dibujaban un anillo frío alrededor del parque. Después, los cuatro planos de control con el etalonaje de referencia: los dos drones, al atardecer y de noche, con la ciudad, el lago con olas, la fortaleza, la torre de agua y el cercado. Cada fotograma tarda entre uno y casi dos minutos.</p>
+    <div class="note"><b>Nota técnica</b>El color de la luz no se ajustó a ojo. En la imagen, un charco es el color de la luz multiplicado por el del suelo. Se midieron los charcos en el concepto y en el render, se pasaron a valores de escena con la inversa numérica de la vista y, al dividir por la luz que había, salió el color del suelo; con él se calculó la luz que da los charcos del concepto. Los focos pasaron de casi blanco a ámbar con un 50 % más de intensidad, porque la luz cálida, a igual potencia, alumbra menos. Medidos después, los charcos caen en el mismo tono que en el concepto.</div>
+    <div class="facts"><span>Fase M3 terminada</span><span>11 bloques</span><span>4 planos de control</span><span>≈80 s por fotograma</span><span>Focos y farolas de sodio</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M3</span><span>20 nov 2026</span></div>
