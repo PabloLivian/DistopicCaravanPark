@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>631</b><span>Sliders creados</span></div>
+    <div class="stat"><b>634</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>22 nov 2026</span></div>
+    <h3>Rejilla con grosor, sin un polígono más</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b7_paso1_rejilla.jpg" alt="Dos zonas de forjados de rejilla bajo caravanas apiladas, vistas desde arriba, antes y después. Antes, una malla fina y transparente que parece dibujada. Después, en los forjados de abajo, huecos alargados con el canto de las pletinas a la vista y el suelo asomando entre ellas; el forjado de arriba, visto muy de lado, se cierra casi del todo"><figcaption>Antes, una malla de papel; ahora, pletinas con canto que se cierran al mirarlas de lado</figcaption></figure>
+    </div>
+    <p>La rejilla de las pasarelas y de los forjados era una cuadrícula transparente pintada en una sola cara: por mucho que se acercara la cámara no tenía canto, y desde lejos dejaba ver a través todo lo que había debajo. Ahora se comporta como una rejilla electrosoldada de verdad. Las pletinas portantes miden 3 cm de alto y las transversales 1 cm. De cerca se les ve el canto, y al mirarla de lado se cierra, como pasa con una rejilla real.</p>
+    <div class="note"><b>Nota técnica</b>Sigue siendo una cara plana con opacidad. El truco está en el material, que conoce la dirección desde la que se mira. En un punto que cae en un hueco calcula cuánto se desplaza el rayo en planta al bajar la altura de la pletina, y lo compara con la distancia que hay hasta la pletina siguiente en ese sentido. Si el desplazamiento es mayor, el rayo chocaría con el costado de la pletina, y ese punto se pinta opaco y algo más oscuro. Es una cuenta exacta, sin muestras, así que no aparecen escalones. Además, Karma evalúa la misma opacidad para los rayos de sombra, así que con sol rasante la rejilla también proyecta una sombra más densa.</div>
+    <div class="facts"><span>Portantes de 3 cm</span><span>Transversales de 1 cm</span><span>0 polígonos nuevos</span><span>Cálculo exacto, sin muestras</span><span>3 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M4</span><span>21 nov 2026</span></div>
