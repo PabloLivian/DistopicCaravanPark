@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>621</b><span>Sliders creados</span></div>
+    <div class="stat"><b>631</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>21 nov 2026</span></div>
+    <h3>Zapatas de hormigón con historia</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b8_paso1_zapatas.jpg" alt="Tres zapatas de hormigón al pie de pilares IPE, ampliadas, antes y después: a la izquierda, bloques grises limpios de aristas perfectas; a la derecha, el canto de arriba y las esquinas con trozos saltados, el árido oscuro a la vista en el hueco"><figcaption>Aristas desconchadas, con el árido a la vista y la armadura asomando en los huecos más hondos</figcaption></figure>
+      <figure><img src="capturas/m4_b8_paso2_zapatas.jpg" alt="Las mismas tres zapatas: en la que está al sol, bajo el pilar, bajan por el costado unas vetas pardas de óxido que se apagan hacia el suelo"><figcaption>El óxido que suelta el pilar baja por el costado de la zapata</figcaption></figure>
+    </div>
+    <p>Bajo cada pilar hay una zapata de hormigón, y eran bloques grises perfectos, sin un golpe. Ahora han perdido trozos en el canto de arriba y en las esquinas, como cuando se les ha caído algo encima o las ha rozado una carretilla. En el hueco se ve el árido, y en los más hondos asoma el óxido de la armadura. Además, el pilar de acero suelta óxido: deja un halo en la cara de arriba y unas vetas pardas que bajan por el costado. Arriba quedan manchas de agua más oscuras. Todo va discreto a propósito, para que el parque no parezca más sucio de lo que es.</p>
+    <div class="note"><b>Nota técnica</b>Ni curvatura ni mapas: cada zapata lleva el centro de su caja como atributo, y como todas miden lo mismo y están alineadas con los ejes, el material calcula la distancia exacta de cada punto a las aristas de arriba y a las esquinas, en la cara de arriba y en los costados. Sumada a un ruido, esa distancia decide dónde salta un trozo, su profundidad y si llega a la armadura. Con el mismo centro sale la distancia al pilar para el halo de óxido, y la distancia lateral decide por dónde bajan las vetas. Un ruido de celdas evaluado en el centro da a cada zapata su propio sorteo, así que unas sueltan óxido y otras no. Las zapatas de la torre de agua usan el mismo material pero no llevan ese atributo, así que se quedan como estaban.</div>
+    <div class="facts"><span>164 zapatas</span><span>~70 % con óxido del pilar</span><span>0 polígonos nuevos</span><span>Sin rayos: solo ruidos y restas</span><span>10 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M4</span><span>21 nov 2026</span></div>
