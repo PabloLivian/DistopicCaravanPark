@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>613</b><span>Sliders creados</span></div>
+    <div class="stat"><b>619</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>21 nov 2026</span></div>
+    <h3>El óxido de abajo deja de ser una línea recta</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b3_paso2_calle.jpg" alt="Dos franjas del mismo plano a pie de calle al atardecer. Arriba, un puesto de chapa con una falda de óxido de borde recto y caravanas con desconchones a la misma altura. Abajo, la misma escena: la banda de óxido del puesto sube y baja a lo largo de la pared, y cada caravana la tiene a una altura distinta"><figcaption>Antes, una banda de 1 m igual en todas las piezas; ahora, una altura por pieza y ondas a lo largo</figcaption></figure>
+      <figure><img src="capturas/m4_b3_paso3_puesto.jpg" alt="El mismo puesto de chapa de cerca, antes y después: a la izquierda, con una franja ancha de óxido en la base; a la derecha, casi limpio, con unos pocos desconchones en el borde de abajo y la misma suciedad en la pared"><figcaption>Los puestos, con mucho menos óxido y la misma suciedad</figcaption></figure>
+    </div>
+    <p>El óxido que sube desde el suelo estaba a la misma altura en todo el parque: una línea recta de un metro en cada caravana, cada puesto y cada contenedor, que delataba que salía de una fórmula. Ahora cada pieza tiene su propia altura, entre 30 y 90 cm, y a lo largo de ella la línea sube y baja como lo haría el agua que se queda al pie de una pared. Además, la banda va llena hasta un poco más de la mitad y luego se funde, así que el borde se lee como una línea irregular y no como un degradado. Los puestos de chapa salían demasiado oxidados para lo que son, sitios que se usan cada día, y ahora conservan solo una décima parte del óxido sin perder la suciedad.</p>
+    <div class="note"><b>Nota técnica</b>La altura de la banda era un número fijo en el material. Ahora sale de dos cosas: un sorteo por pieza a partir de la variación que ya tenía cada instancia y un ruido que solo varía en horizontal, porque lleva la altura multiplicada por cero. Así las ondas van a lo largo de la pieza y no en altura, y cada caravana tiene las suyas porque el ruido se desplaza con su variación. Para los puestos, el generador del parque marca cada instancia con cuánto óxido hay que quitarle, y el material multiplica por ese valor solo lo que pinta óxido (desconchones y óxido blando). La suciedad lee el campo de desgaste sin tocar. El valor va al revés, como «cuánto se quita», porque el visor de Houdini lee como cero los atributos de las instancias, y así allí todo se ve como siempre.</div>
+    <div class="facts"><span>0,3–0,9 m por pieza</span><span>Ondas de ±0,25 m</span><span>Puestos con ~10 % del óxido</span><span>0 texturas</span><span>6 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M4</span><span>21 nov 2026</span></div>
