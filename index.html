@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>619</b><span>Sliders creados</span></div>
+    <div class="stat"><b>621</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,17 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>21 nov 2026</span></div>
+    <h3>Cantos redondeados en las vigas, tubos limpios</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b4_paso2_vigas.jpg" alt="Dos recortes ampliados de un pilar IPE y de los tubos de arriostramiento cruzados delante de una caravana, al atardecer, antes y después. Antes, el ala del pilar es un corte oscuro y los tubos tienen un brillo moteado; después, el canto del ala recoge una línea fina de luz y el brillo de los tubos corre liso a lo largo del cilindro"><figcaption>Antes y después: el canto del ala del pilar recoge la luz y los tubos dejan de brillar a motas</figcaption></figure>
+    </div>
+    <p>En el mundo real ninguna arista de acero es un filo perfecto: el laminado y la pintura la redondean y por eso el canto de una viga recoge una línea de luz. Ahora las vigas y los pilares IPE la tienen, sin un solo polígono más. Se probó también en la chapa de las caravanas y los contenedores, pero ahí era demasiado detalle y se quedó solo en la estructura. De paso salió un fallo antiguo: los tubos de andamio de las cruces llevaban el grano de metal pensado para las vigas planas, y en un cilindro se leía como un brillo moteado. Ahora son lisos.</p>
+    <div class="note"><b>Nota técnica</b>El redondeo es un nodo de Karma que, en cada punto que sombrea, lanza unos pocos rayos cortos a su alrededor y, si encuentra otra cara a menos de 1,5 cm con un ángulo mayor de 30°, mezcla las dos normales: la luz se comporta como si hubiera un bisel, aunque la malla sigue con las aristas vivas. Funciona en el motor XPU y se encadena antes del relieve de los desconchones, que se sigue aplicando encima. Lo que decide qué piezas lo llevan es un atributo que ya existía en la estructura y que dice si cada pieza es un perfil IPE pintado o un tubo galvanizado: el mismo valor limita ahora el redondeo y el grano del metal a las IPE.</div>
+    <div class="facts"><span>Radio de 1,5 cm</span><span>4 rayos por punto</span><span>0 polígonos nuevos</span><span>≤ +7 % de render</span><span>2 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M4</span><span>21 nov 2026</span></div>
