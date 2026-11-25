@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M5</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>761</b><span>Sliders creados</span></div>
+    <div class="stat"><b>786</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 4 de 8 hechas; M5 (puestos, rótulos y números) en marcha, bloque 1 de 5 hecho</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 4 de 8 hechas; M5 (puestos, rótulos y números) en marcha, bloques 1 y 2 de 5 hechos</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M5</span><span>25 nov 2026</span></div>
+    <h3>Género en los puestos: botellas, vasos y un poco de caos</h3>
+    <div class="shots">
+      <figure><img src="capturas/m5_b2_puesto.jpg" alt="Render de día de un bar del parque visto a la altura de un peatón: un puesto de chapa ondulada con mostrador de tablones y tres taburetes delante; dentro, en la sombra, dos baldas largas llenas de botellas de vidrio verde, ámbar, azul y transparente con etiquetas de colores, y unas pocas botellas y vasos sobre la barra"><figcaption>El bar en el render: dos baldas llenas y la barra con botellas y vasos</figcaption></figure>
+      <figure><img src="capturas/m5_b2_p4_bar.png" alt="Interior del bar en el visor de Houdini: dos baldas con hileras de botellas de cuatro formas, agrupadas en tandas de la misma marca, con la misma etiqueta y el mismo tapón, a distancias irregulares; en la barra, botellas sueltas con vasos y una jarra con asa alrededor y una botella tumbada"><figcaption>Tandas de la misma marca en las baldas y, en la barra, botellas con sus vasos y una tumbada</figcaption></figure>
+      <figure><img src="capturas/m5_b2_p3_electronica.png" alt="Las baldas de un puesto de electrónica en el visor: monitores de tubo con la pantalla azulada, radios con rejilla, bobinas de cable tumbadas con las tapas de madera y placas de circuito apiladas, colocadas sin orden fijo"><figcaption>Cada oficio con su género: aquí electrónica, con monitores, radios, bobinas y placas</figcaption></figure>
+    </div>
+    <p>Los puestos ya tenían carcasa de chamizo, pero dentro todo eran cajas iguales en fila. Ahora cada oficio vende lo suyo. El bar tiene botellas de cuatro formas reales (vino, cerveza, licor y garrafa), vasos y jarras; la tienda, latas, tarros, sacos y cajas; el taller, bidones de aceite, cajas de piezas y botes de pintura; y electrónica, radios, monitores de tubo, bobinas de cable y placas. A petición del usuario nada está perfecto: las piezas van a distancias desiguales, a distinto fondo y con huecos. En la barra no hay eje común: cada botella lleva sus vasos al lado y a veces hay una tumbada. Las botellas iguales van en tandas de la misma marca, con la misma etiqueta y el mismo tapón, y el vidrio es translúcido y del color de cada una. Además, el dintel tapaba las baldas (dejaba un hueco de 1,69 m, por el que había que agacharse) y ahora nunca baja de 1,95 m.</p>
+    <div class="note"><b>Nota técnica</b>Todo el género sale de una biblioteca de 19 piezas. Las redondas son perfiles girados (con su tapón y su etiqueta como partes aparte) y las demás, una tabla de cajas y tubos. Cada punto de la balda elige su pieza por pesos, solo entre las que caben bajo la balda de encima. Para el desorden, cada fila se recoloca con el ancho real de cada pieza: parte de su sitio, se mueve un poco y se empuja a un lado y a otro hasta que nada se toca, así que los huecos salen irregulares sin que ninguna pieza se monte encima de otra. La barra se llena a dardos, como quien deja las cosas donde hay sitio. El color se decide en la geometría, por pieza y por parte, y los materiales solo lo leen.</div>
+    <div class="facts"><span>19 piezas de género</span><span>4 oficios</span><span>Barra sin eje común</span><span>Hueco mínimo de 1,95 m</span><span>25 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M5</span><span>25 nov 2026</span></div>
