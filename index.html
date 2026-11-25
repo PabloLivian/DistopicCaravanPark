@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>640</b><span>Sliders creados</span></div>
+    <div class="stat"><b>649</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>25 nov 2026</span></div>
+    <h3>Grano escaneado bajo el desgaste procedural</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b5_grano_cam_grano.jpg" alt="Primer plano con teleobjetivo del costado de una autocaravana capuchina blanca: chapa con remaches, un cartel de un perro que dice Vote for president, desconchones y una franja vertical de óxido junto a la ventanilla de la cabina"><figcaption>El plano de control: un 75 mm sobre el costado de la capuchina, a casi 7 metros</figcaption></figure>
+      <figure><img src="capturas/m4_b5_grano_oxido_comparacion.jpg" alt="Dos recortes de óxido ampliados, en tres versiones lado a lado. Sin grano, el óxido es una mancha marrón lisa. Con el grano solo en la mezcla de colores apenas cambia. Con la mezcla y el brillo, el óxido sale moteado, con granos naranjas sobre marrón oscuro"><figcaption>El óxido ampliado: liso, con el grano solo en la mezcla y con la mezcla y el brillo</figcaption></figure>
+    </div>
+    <p>La pintura, el óxido y las vigas eran del todo procedurales. Desde lejos funcionaba, pero de cerca el óxido era una mancha lisa y la pintura no tenía textura. Ahora llevan debajo el grano de cuatro escaneos de Poliigon: la rugosidad de una pintura gastada, las motas de un óxido real, unas micro-rayas y la mugre de un metal. Las máscaras procedurales siguen decidiendo dónde hay pintura, imprimación u óxido; el escaneo solo pone la textura fina dentro de cada zona.</p>
+    <div class="note"><b>Nota técnica</b>Karma XPU se caía en cuanto un material del parque llevaba dos lecturas triplanares. La solución fue empaquetar los cuatro mapas en los canales de una sola imagen EXR y leerla una única vez con un triplanar hexagonal, que rompe las repeticiones; cada canal se separa después en el shader. No vale un PNG: al leerlo, el alfa multiplica los otros tres canales. El óxido usa la luminancia del escaneo para tres cosas: la mezcla entre marrón oscuro y naranja, la rugosidad y el relieve dentro de los desconchones. Leer el canal alfa con el nodo habitual tumbaba el compilador de la GPU; un producto escalar por (0, 0, 0, 1) da el mismo valor sin el fallo. Con el grano en todos los metales el render subía un 25 %. Limitado a la chapa y las vigas, que es donde se ve, sube un 8 %.</div>
+    <div class="facts"><span>4 mapas en 1 textura</span><span>1 sola lectura triplanar</span><span>+8 % de render (103 → 112 s)</span><span>Cámara de control a 75 mm</span><span>9 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · entorno</span><span>23 nov 2026</span></div>
