@@ -167,9 +167,9 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>M5</b><span>Siguiente fase</span></div>
+    <div class="stat"><b>M5</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>742</b><span>Sliders creados</span></div>
+    <div class="stat"><b>761</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 4 de 8 hechas; siguiente, M5 (puestos, rótulos y números)</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 4 de 8 hechas; M5 (puestos, rótulos y números) en marcha, bloque 1 de 5 hecho</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M5</span><span>25 nov 2026</span></div>
+    <h3>Puestos de chapa de verdad: onda, bastidor y tablones</h3>
+    <div class="shots">
+      <figure><img src="capturas/m5_b1_plaza_antes_despues.jpg" alt="La plaza a pie de calle de día, antes y ahora. Antes, los puestos son cajas lisas de color rosa y blanco, con un bar largo lleno de botellas a la izquierda. Ahora, las paredes y los tejados son chapa ondulada que coge la luz en cada onda, con el alero de canto ondulado, y por el frente abierto del puesto de la izquierda se ven por dentro los tubos del bastidor"><figcaption>Antes y ahora en la plaza: de cajas lisas a chapa ondulada sobre bastidor</figcaption></figure>
+      <figure><img src="capturas/m5_b1_p3_tablones_frente.png" alt="Un puesto de chapa en el visor de Houdini, de frente, junto a una figura humana de 1,8 metros: paredes y dintel de chapa ondulada gris azulada, tejado de chapas solapadas con postes delante y un mostrador de tablones verticales de madera con una tabla clavada en diagonal"><figcaption>El mostrador de tablones con la tabla en diagonal, como el bar de la referencia</figcaption></figure>
+      <figure><img src="capturas/m5_b1_p4_pool_hoja.png" alt="Veinte puestos en cuatro filas, vistos desde arriba en el visor: tiendas, bares, talleres y puestos de electrónica de uno, dos y tres módulos de ancho, con tejados de chapa o de lona, paredes onduladas o grecadas y frentes de madera"><figcaption>Las 20 variantes del pool: cada una sortea su perfil de chapa, sus anchos y su frente</figcaption></figure>
+    </div>
+    <p>Los puestos eran la familia más floja a la altura de la calle: cajas macizas de color, con el tejado como una sola lámina. Ahora se construyen como un chamizo de verdad. Hay un bastidor de tubo cuadrado de 4 cm, y encima van chapas sueltas de un metro, onduladas o grecadas, que se solapan una onda y arrancan cada una a una altura algo distinta. Las esquinas llevan remates galvanizados en L y el tejado son chapas sueltas con el canto a la vista. El mostrador pasa a ser de tablones verticales con holguras desiguales y, en algunos, una tabla en diagonal, como el bar de la referencia; parte de los puestos llevan también el dintel de tablones. A petición del usuario, los bares ya solo son pequeños o medianos, hay dos como mucho en todo el parque y siempre a pie de calle.</p>
+    <div class="note"><b>Nota técnica</b>Cada pared es una sola chapa de plantilla, con un número entero de ondas, copiada a una fila de puntos. Como el avance entre chapas es (ondas − 1) × paso, las ondas solapadas encajan una dentro de otra, y la última chapa de cada pared se corta con un plano en vez de estirarse. El contorno de cada puesto no se mueve ni un milímetro, así que el parque no recoloca nada al cambiar la carcasa. Que la onda sea geometría real tuvo un efecto secundario en el material: el desgaste por curvatura veía cada valle como una cavidad y oxidaba el puesto entero. Un atributo en la chapa apaga ese desgaste solo ahí y devuelve el óxido al nivel que el usuario había pedido para los puestos.</div>
+    <div class="facts"><span>Bastidor de tubo de 40 mm</span><span>Chapa de 76 × 18 mm o grecada</span><span>20 variantes horneadas</span><span>Bares: 2 como mucho</span><span>19 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M4</span><span>25 nov 2026</span></div>
