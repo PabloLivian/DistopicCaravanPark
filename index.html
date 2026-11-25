@@ -167,9 +167,9 @@
   </header>
 
   <section class="stats" aria-label="Cifras del proyecto">
-    <div class="stat"><b>M4</b><span>Fase en curso</span></div>
+    <div class="stat"><b>M5</b><span>Siguiente fase</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>734</b><span>Sliders creados</span></div>
+    <div class="stat"><b>742</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 3 de 8 hechas; M4 (shading v2) en marcha</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 4 de 8 hechas; siguiente, M5 (puestos, rótulos y números)</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,18 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>25 nov 2026</span></div>
+    <h3>Una fortaleza brutalista, y M4 cerrada</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b10_p1_uvs.jpg" alt="La fortaleza 07 cubierta con una cuadrícula naranja y gris de prueba, de frente y de cerca junto al portón: muros, contrafuertes inclinados, tuberías y casetas de la coronación llevan cuadros del mismo tamaño"><figcaption>Las UVs, revisadas con la misma cuadrícula de 50 cm que la torre de agua</figcaption></figure>
+      <figure><img src="capturas/m4_b10_final_antes_despues.jpg" alt="La fortaleza 07 de día, antes y ahora, de frente y de cerca junto al portón con el 07 pintado encima. Antes, un hormigón blanco y liso con manchas naranjas sueltas y un portón gris. Ahora, un hormigón gris oscuro de paneles de encofrado con manchas negras de agua bajo cada junta, el 07 blanco gastado con esas mismas manchas y el portón de chapa azulada con chorreones de óxido"><figcaption>Antes y ahora: hormigón brutalista de paneles, más oscuro, y el portón de chapa oxidada</figcaption></figure>
+    </div>
+    <p>Último bloque de la fase de shading. La fortaleza 07 era un bloque de hormigón blanco, liso y limpio. Ahora es brutalista, como pedía su hoja de diseño: paneles de encofrado de unos dos metros, cada uno con su mancha de agua bajo la junta, el 07 pintado y gastado por encima, y las casetas y el portón de chapa pintada con chorreones de óxido. Las texturas son escaneos de Poliigon elegidos por el usuario. Después, el usuario pasó una captura oscurecida como referencia, y los materiales se oscurecieron hasta casar con ella sin cambiar de textura. Con esto se cierra M4, la cuarta fase de mejoras: doce bloques de shading, del óxido de la chapa a la fortaleza del fondo.</p>
+    <div class="note"><b>Nota técnica</b>Es la misma receta que la torre de agua. Las UVs se generan proyectando cada cara desde su eje dominante, a un metro por unidad, en las 12.346 caras de la fortaleza; el zócalo de roca se queda con el material del terreno. El escaneo del muro es una tira panorámica: se reduce con su proporción y se repite en espejo en vertical a 20 × 6,8 m, de modo que de lejos se leen paneles a la escala de la hoja de diseño. Las texturas multiplican el color de siempre, normalizadas por su media, y la pintura del 07 lleva el mismo detalle que el hormigón de debajo, así que parece pintada encima. El oscurecido no se hizo a ojo: se midió la luminancia del muro en la referencia del usuario, se descontó el oscurecido general que tenía la captura entera y salió un factor de 0,22 para el hormigón.</div>
+    <div class="facts"><span>12.346 caras con UVs</span><span>2 texturas de Poliigon</span><span>Oscurecido medido: × 0,22</span><span>Fase M4 terminada</span><span>8 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M4</span><span>25 nov 2026</span></div>
