@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M4</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>729</b><span>Sliders creados</span></div>
+    <div class="stat"><b>734</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -205,6 +205,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M4</span><span>25 nov 2026</span></div>
+    <h3>La torre de agua, texturizada para verse de lejos</h3>
+    <div class="shots">
+      <figure><img src="capturas/m4_b9_p1_uvs.jpg" alt="La torre de agua de día cubierta con una cuadrícula naranja y gris de prueba: el depósito, el fuste central, las patas inclinadas, las vigas y las zapatas llevan cuadros del mismo tamaño, sin estirarse"><figcaption>Primero, las UVs: una cuadrícula de 50 cm del mismo tamaño en todas las piezas</figcaption></figure>
+      <figure><img src="capturas/m4_b9_p2_torre_antes_despues.jpg" alt="La torre de agua de día, antes y ahora, entera y con la zona de las patas ampliada. Antes, el depósito lleva anchos chorretones naranjas de óxido y las patas de hormigón blancas están salpicadas de manchas naranjas. Ahora, el depósito tiene la pintura moteada, poco óxido y roña oscura que baja desde el tejado, y el hormigón muestra tablillas de encofrado, chorreones amarillentos y suciedad bajo las vigas"><figcaption>Antes y ahora: menos óxido, pintura gastada, encofrado y roña</figcaption></figure>
+      <figure><img src="capturas/m4_b9_p2_torre_dron.jpg" alt="La torre de agua vista de lejos desde el dron, junto al lago y el pinar, con el parque de caravanas a la derecha: el depósito con la estrella se lee sucio y gastado"><figcaption>De lejos, desde el plano del dron, que es como se va a ver</figcaption></figure>
+    </div>
+    <p>La torre de agua era todo procedural y sin coordenadas de textura: de cerca se le notaban los colores planos. Ahora lleva dos texturas escaneadas de Poliigon, elegidas por el usuario: un hormigón de encofrado con chorreones de óxido para los pilares, las vigas y las zapatas, y una pintura desconchada para el depósito y el acero. No habrá primeros planos de la torre, así que el detalle está pensado para la distancia. El óxido se ha quedado en un pelín, y encima van la roña y el polvo que ya ensuciaban la estructura del parque.</p>
+    <div class="note"><b>Nota técnica</b>Las UVs se generan, no se hacen a mano. Cada cara se proyecta desde el eje hacia el que mira, como una caja, con 1 unidad = 1 metro, así que la textura tiene el mismo tamaño en todas las piezas. El costado del depósito va en cilíndrico: ángulo por perímetro y altura en metros, con el centro leído del punto de la base del depósito. El ángulo de cada vértice se toma respecto al centro de su cara, para que ninguna cruce la costura. El perímetro se fijó en 38 m para que las baldosas de 2 m de la pintura cierren la vuelta sin corte. El hormigón escaneado era la base de un muro, con salpicaduras de tierra abajo: se usa solo la parte limpia de arriba, repetida en espejo en vertical. Las dos texturas no sustituyen el color, lo multiplican, normalizadas por su media: sin textura el material queda igual que antes, y los desconchones procedurales siguen ahí. Todo se lee por UV, sin triplanares, así que no choca con el límite de Karma XPU.</div>
+    <div class="facts"><span>UVs en metros, sin tocar a mano</span><span>2 texturas de Poliigon</span><span>0 triplanares</span><span>Detalle pensado para la distancia</span><span>5 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M4</span><span>25 nov 2026</span></div>
