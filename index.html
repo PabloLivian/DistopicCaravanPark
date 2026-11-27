@@ -169,7 +169,7 @@
   <section class="stats" aria-label="Cifras del proyecto">
     <div class="stat"><b>M5</b><span>Fase en curso</span></div>
     <div class="stat"><b>8</b><span>Tipos de caravana</span></div>
-    <div class="stat"><b>786</b><span>Sliders creados</span></div>
+    <div class="stat"><b>802</b><span>Sliders creados</span></div>
     <div class="stat"><b>≈160</b><span>Unidades objetivo</span></div>
   </section>
 
@@ -185,7 +185,7 @@
     <li class="done"><span class="n">6</span>HDA e interfaz<span class="st">Hecha · 84 sliders, 3 presets</span></li>
     <li class="done"><span class="n">7</span>Lookdev y luz<span class="st">Hecha · 2 ambientes</span></li>
     <li class="done"><span class="n">8</span>Desgaste y detalle fino<span class="st">Hecha · 10 bloques, sin LOD</span></li>
-    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 4 de 8 hechas; M5 (puestos, rótulos y números) en marcha, bloques 1 y 2 de 5 hechos</span></li>
+    <li class="doing"><span class="n">M</span>Mejoras de la revisión<span class="st">En curso · 4 de 8 hechas; M5 (puestos, rótulos y números) en marcha, bloques 1 a 3 de 5 hechos</span></li>
     <li class="todo"><span class="n">9</span>Visualizador procedural<span class="st">Pendiente</span></li>
     <li class="todo"><span class="n">10</span>Cinemática<span class="st">Pendiente</span></li>
   </ol>
@@ -205,6 +205,19 @@
   </div>
 
   <!-- PLANTILLA: copia un <article class="entry"> completo, la entrada nueva va ARRIBA -->
+
+  <article class="entry">
+    <div class="meta"><span class="phase">Mejoras · M5</span><span>27 nov 2026</span></div>
+    <h3>Rótulos sobre el alero: tablas, chapa y neón</h3>
+    <div class="shots">
+      <figure><img src="capturas/m5_b3_rotulo_noche.jpg" alt="Render al anochecer de un bar del parque a la altura de un peatón: sobre el alero de chapa ondulada, un cartel de chapa oscura con la palabra SALOON en tubo de neón rosa encendido; debajo, la barra de tablones con taburetes y, dentro, dos baldas de botellas iluminadas por bombillas; a la izquierda, un puesto más pequeño con un cartel de tablas que dice MINI MART en letras negras"><figcaption>Al anochecer: el bar con su SALOON de neón rosa y, al lado, el MINI MART pintado en tablas</figcaption></figure>
+      <figure><img src="capturas/m5_b3_rotulo_dia.jpg" alt="El mismo encuadre de día: el cartel SALOON con los tubos de neón apagados, de vidrio claro, sobre la chapa; el cartel MINI MART de tablas de madera con las letras negras algo desconchadas; detrás, torres de caravanas apiladas sobre estructuras metálicas oxidadas"><figcaption>De día el neón se apaga y se ve el tubo de vidrio; las letras pintadas están desconchadas</figcaption></figure>
+      <figure><img src="capturas/m5_b3_p2_pool_b.png" alt="Varios puestos del pool vistos desde arriba en el visor de Houdini, cada uno con su cartel sobre el alero: BATTERIES, WELDING, PARTS &amp; TIRES, THE RUSTY CAN, PORTLAND AVE MARKET y CANNED GOODS, unos de tablas y otros de chapa"><figcaption>Cada variante del pool con su nombre, su letra y su soporte según el oficio</figcaption></figure>
+    </div>
+    <p>Los puestos ya tenían carcasa y género, pero ninguno decía qué vendía. Ahora cada uno lleva un cartel de pie sobre el alero, como el bar de la referencia: de tablas de madera con las letras pintadas, de chapa del mismo color que el puesto o con tubo de neón sobre una chapa oscura. Los nombres van en inglés, porque el parque está en Estados Unidos, y salen por oficio: GROCERY, GENERAL STORE o MINI MART en las tiendas; BAR, SALOON o LAST CALL en los bares; GARAGE, TIRES o WELDING en los talleres; y ELECTRONICS, TV &amp; RADIO o BATTERIES en electrónica. Hay dos guiños al libro: PORTLAND AVE MARKET (las Torres de Wade) y VISOR REPAIR (los visores del OASIS). Cada oficio tiene sus tipos de letra y sus colores, y el neón solo aparece en bares y electrónica: de día es un tubo de vidrio apagado y al anochecer brilla.</p>
+    <div class="note"><b>Nota técnica</b>El texto sale de un Font SOP con el tipo de letra que se quiera y se encaja dentro del cartel menos un margen sin deformarlo, así que un nombre largo se hace más pequeño y uno corto ocupa todo el alto. El neón es el contorno de las mismas letras, remuestreado cada 2 cm y barrido como tubo de 6 mm. Antes de colocarlo se comprobó qué medidas de los puestos lee el parque: solo el fondo y el ancho. Por eso el cartel va 10 cm por detrás del canto del alero y su borde de arriba no pasa de 3,05 m, y así ningún puesto se mueve ni choca con las pasarelas que tiene encima. Los desconchones de las letras no se pintan: son agujeros en su opacidad, y por ellos se ve la madera o la chapa de debajo.</div>
+    <div class="facts"><span>3 soportes</span><span>20 rótulos en 4 oficios</span><span>Neón de 6 mm</span><span>Tope de 3,05 m</span><span>16 sliders nuevos</span></div>
+  </article>
 
   <article class="entry">
     <div class="meta"><span class="phase">Mejoras · M5</span><span>25 nov 2026</span></div>
